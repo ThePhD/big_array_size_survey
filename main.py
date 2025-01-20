@@ -13,6 +13,7 @@ import numpy
 import sys
 from mpl_toolkits.basemap import Basemap
 import wordcloud
+import colorsys
 
 class response:
 	usage_experience_associations = {
@@ -93,9 +94,9 @@ class response:
 		)
 	]
 	index_to_delivery_associations = [
-		"\"_Keyword\" and <stdkeyword.h>",
-		"Just \"_Keyword\"",
-		"Lowercase \"keyword\""
+		"`_Keyword` and <stdkeyword.h>",
+		"Just `_Keyword`",
+		"Lowercase `keyword`"
 	]
 	delivery_underscore_header_index = 0
 	delivery_underscore_only_index = 1
@@ -204,6 +205,11 @@ country_pattern = re.compile(r"^\[Country\]\s*(.*)$")
 score_colors = ["slategrey", "firebrick", "gold", "limegreen", "cornflowerblue", "blueviolet", "deeppink"]
 score_hatches = ["o", "x", "-", "|", "\\", "/", "*"]
 skill_hatches = ["o", "x", "-", "|", "\\", "/", "*"]
+
+def csv_string_escape (value: str):
+	value = value.replace("\"", r"\"")
+	value = value.replace("\n", r"\n")
+	return value
 
 def parse_question_answer(question_number, current_response: response,
                           line: str, line_index: int, line_count: int,
@@ -357,6 +363,20 @@ def parse_all_counted_data_into(lines):
 
 def write_data(results : list[response], output_prefix, seed):
 	with open(output_prefix + "_data.csv", "w", encoding="utf-8") as f:
+		# descriptive headers
+		header_line = "response_id,last_use,skill_level,"
+		for label in response.index_to_spelling_associations:
+			header_label = csv_string_escape(label)
+			header_line += f"\"{header_label}\","
+		for label in response.index_to_delivery_associations:
+			header_label = csv_string_escape(label)
+			header_line += f"\"{header_label}\","
+		for label in response.index_to_exact_spelling_associations:
+			header_label = csv_string_escape(label)
+			header_line += f"\"{header_label}\","
+		header_line += ",comment"
+		f.write(header_line)
+		# rest of the data
 		for result in results:
 			line = f"{result.id},{result.last_use},{result.skill_level}"
 			for s in result.spelling:
@@ -367,9 +387,7 @@ def write_data(results : list[response], output_prefix, seed):
 				line += f",{es}"
 			line += ","
 			if not result.comment is None and len(result.comment) > 0:
-				comment = result.comment
-				comment = comment.replace("\"", r"\"")
-				comment = comment.replace("\\n", r"\n")
+				comment = csv_string_escape(result.comment)
 				line += f"\"{comment}\""
 			line += "\n"
 
@@ -388,12 +406,17 @@ def draw_city_distribution(results: list[response], output_prefix, seed):
 					    width=1600, height=1200)
 	cloud.generate_from_frequencies(cities_and_countries)
 	img = cloud.to_image().convert("RGBA")
-	#for x in range(0, img.width):
-	#	for y in range(0, img.height):
-	#		pixel = img.getpixel((x, y))
-	#		fuzziness = 40
-	#		if (255 - fuzziness) <= pixel[0] <= 255 and (255 - fuzziness) <= pixel[0] <= 255 and (255 - fuzziness) <= pixel[0] <= 255:
-	#			img.putpixel((x, y), (0, 0, 0, 0))
+	for x in range(0, img.width):
+		for y in range(0, img.height):
+			pixel = img.getpixel((x, y))
+			pixel_hsv = colorsys.rgb_to_hsv(pixel[0], pixel[1], pixel[2])
+			fuzziness = 0.6
+			brightness = pixel_hsv[2] / 255
+			if brightness < fuzziness or pixel_hsv[1] > 0.3:
+				continue
+			alpha = 1.0 - ((brightness - fuzziness) / (1.0 - fuzziness))
+			alpha_rgba = int(min(max(alpha * 255, 0), 255))
+			img.putpixel((x, y), (pixel[0], pixel[1], pixel[2], alpha_rgba))
 	img.save(output_prefix + "_cloud.png")
 	matplotlib.pyplot.close('all')
 
@@ -405,14 +428,14 @@ def draw_map(results: list[response], output_prefix, seed):
 	# draw parallels and meridians.
 	map.drawparallels(numpy.arange(-90.,91.,30.), color="white", linewidth=0.5)
 	map.drawmeridians(numpy.arange(-180.,181.,60.), color="white", linewidth=0.5)
-	map.drawmapboundary(fill_color="royalblue")
-	map.drawcountries(linewidth=0.2, color="cyan")
+	map.drawmapboundary(color="white", fill_color="royalblue")
+	map.drawcountries(linewidth=0.4, color="white")
 	rnd = random.Random(seed)
 	markers = [".", "x", "*", "v", "d", "p"]
 	colors = score_colors[:6]
 	plots = []
 	handles_and_labels = [None, None, None, None, None, None]
-	stroke_effects = [matplotlib.patheffects.withStroke(linewidth=1, foreground="b")]
+	stroke_effects = [matplotlib.patheffects.withStroke(linewidth=1.25, foreground="white")]
 	
 	for result in results:
 		longiskew = -0.8 + ((rnd.randrange(0, 100) / 100.0) * 1.6)
@@ -427,14 +450,14 @@ def draw_map(results: list[response], output_prefix, seed):
 		plot = map.plot(x, y, marker=marker, color=(marker_color, 0.25), linewidth=0.3)
 		plots.append(plot)
 		if handle_label is None:
-			legend_plot = map.plot(0, 0, marker=marker, color=(marker_color, 0.5), linewidth=0.3, zorder=sys.float_info.min)[0]
+			legend_plot = map.plot(0, 0, marker=marker, color=(marker_color, 0.5), linewidth=0.30, zorder=sys.float_info.min)[0]
 			plot_label = response.index_to_spelling_associations[best_spelling_score_index]
 			handle_label = handles_and_labels[best_spelling_score_index] = (legend_plot, plot_label)
 	
 	matplotlib.pyplot.legend([hl[0] for hl in handles_and_labels], [hl[1] for hl in handles_and_labels], fontsize="x-small")
 	
 	title_text = matplotlib.pyplot.title("Respondent Geographic Distribution")
-	title_text.set_color("#FFFF")
+	title_text.set_color("#000F")
 	title_text.set_path_effects(stroke_effects)
 	
 	matplotlib.pyplot.tight_layout()
@@ -457,16 +480,16 @@ def draw_skill_piecharts(results: list[response], output_prefix: str, seed: int)
 	figures, axes = matplotlib.pyplot.subplots()
 	figures.set_figwidth(28)
 	figures.set_figheight(20)
-	stroke_effects = [matplotlib.patheffects.withStroke(linewidth=1, foreground="b")]
+	stroke_effects = [matplotlib.patheffects.withStroke(linewidth=2, foreground="white")]
 	title_text = axes.set_title("Respondent Skill Levels")
 	_, texts = axes.pie(sizes, counterclock=False, labels=labels, hatch=skill_hatches)
 
 	title_text.set_fontsize(48)
-	title_text.set_color("#FFFF")
+	title_text.set_color("#000F")
 	title_text.set_path_effects(stroke_effects)
 	for t in texts:
 		t.set_fontsize(20)
-		t.set_color("#FFFF")
+		t.set_color("#000F")
 		t.set_path_effects(stroke_effects)
 	figures.savefig(output_prefix + "_skills.png", transparent=True)
 	matplotlib.pyplot.close('all')
@@ -487,16 +510,16 @@ def draw_experience_piecharts(results: list[response], output_prefix: str, seed:
 	figures, axes = matplotlib.pyplot.subplots()
 	figures.set_figwidth(21)
 	figures.set_figheight(20)
-	stroke_effects = [matplotlib.patheffects.withStroke(linewidth=1, foreground="b")]
+	stroke_effects = [matplotlib.patheffects.withStroke(linewidth=2, foreground="white")]
 	title_text = axes.set_title("Respondent Usage Experience")
 	_, texts = axes.pie(sizes, counterclock=False, labels=labels, hatch=score_hatches)
 
 	title_text.set_fontsize(48)
-	title_text.set_color("#FFFF")
+	title_text.set_color("#000F")
 	title_text.set_path_effects(stroke_effects)
 	for t in texts:
 		t.set_fontsize(20)
-		t.set_color("#FFFF")
+		t.set_color("#000F")
 		t.set_path_effects(stroke_effects)
 	figures.savefig(output_prefix + "_experience.png", transparent=True)
 	matplotlib.pyplot.close('all')
@@ -511,6 +534,7 @@ def draw_spelling_barcharts(results: list[response], output_prefix: str, seed: i
 		[0, 0, 0, 0, 0, 0, 0],
 		[0, 0, 0, 0, 0, 0, 0],
 	)
+	stroke_effects = [matplotlib.patheffects.withStroke(linewidth=2, foreground="gainsboro")]
 	for result in results:
 		for i, score in enumerate(spelling):
 			score = result.spelling[i]
@@ -533,19 +557,28 @@ def draw_spelling_barcharts(results: list[response], output_prefix: str, seed: i
 			bar_left_edge += bar_score
 			bar.set_label(label_name)
 			bars.append(bar)
-	axes.set(xlabel="Raw Vote Count", ylabel="", ylim=(-1, 8.5), xlim=(-1000, 1000))
-	axes.set_yticks([0, 1.5, 3, 4.5, 6, 7.5], response.index_to_spelling_associations)
+	axes.set(ylabel="", ylim=(-1, 8.5), xlim=(-1000, 1000))
+	axes.set_xlabel("Raw Vote Count", path_effects=stroke_effects)
+	axes.set_xticks(numpy.arange(-1000, 1000, 250),
+			  [str(x) for x in numpy.arange(-1000, 1000, 250)],
+			  path_effects=stroke_effects)
+	axes.set_yticks([0, 1.5, 3, 4.5, 6, 7.5], response.index_to_spelling_associations,
+			  path_effects=stroke_effects)
 	axes.grid(True)
 	axes.legend(bars[:len(response.index_to_score_name_associations)],
 		   response.index_to_score_name_associations,
 		   loc="upper left", bbox_to_anchor=(1, 0.5))
-	axes.set_title("Preferred Spelling")
+	title_text = axes.set_title("Preferred Spelling")
+	title_text.set_color("#000F")
+	title_text.set_path_effects(stroke_effects)
+	
 	figures.set_figwidth(figures.get_figwidth() * 2.8)
-	figures.savefig(output_prefix + "_spelling_preference.png")
+	figures.savefig(output_prefix + "_spelling_preference.png", transparent=True)
 	matplotlib.pyplot.close('all')
 
 def draw_delivery_barcharts(results: list[response], output_prefix: str, seed: int):
 	# format data
+	stroke_effects = [matplotlib.patheffects.withStroke(linewidth=2, foreground="gainsboro")]
 	delivery = (
 		[0, 0, 0, 0, 0, 0, 0],
 		[0, 0, 0, 0, 0, 0, 0],
@@ -573,20 +606,29 @@ def draw_delivery_barcharts(results: list[response], output_prefix: str, seed: i
 			bar_left_edge += bar_score
 			bar.set_label(label_name)
 			bars.append(bar)
-	axes.set(xlabel="Raw Vote Count", ylabel="", ylim=(-1, 4), xlim=(-1000, 1000))
-	axes.set_yticks([0, 1.5, 3], ["\n".join(s.split()) for s in response.index_to_delivery_associations])
+	axes.set(ylabel="", ylim=(-1, 4), xlim=(-1000, 1000))
+	axes.set_xlabel("Raw Vote Count", path_effects=stroke_effects)
+	axes.set_xticks(numpy.arange(-1000, 1000, 250),
+			  [str(x) for x in numpy.arange(-1000, 1000, 250)],
+			  path_effects=stroke_effects)
+	axes.set_yticks([0, 1.5, 3],
+			  ["\n".join(s.split()) for s in response.index_to_delivery_associations],
+			  path_effects=stroke_effects)
 	axes.grid(True)
 	axes.legend(bars[:len(response.index_to_score_name_associations)],
 		   response.index_to_score_name_associations,
 		   loc="upper left", bbox_to_anchor=(1, 0.5))
-	axes.set_title("Preferred Delivery Mechanism")
+	title_text = axes.set_title("Preferred Delivery Mechanism")
+	title_text.set_color("#000F")
+	title_text.set_path_effects(stroke_effects)
 	figures.set_figwidth(figures.get_figwidth() * 2.8)
-	figures.savefig(output_prefix + "_delivery_preference.png")
+	figures.savefig(output_prefix + "_delivery_preference.png", transparent=True)
 	matplotlib.pyplot.close('all')
 
 
 def draw_exact_spelling_barcharts(results: list[response], output_prefix: str, seed: int):
 	# format data
+	stroke_effects = [matplotlib.patheffects.withStroke(linewidth=2, foreground="gainsboro")]
 	exact_spelling = (
 		[0, 0, 0, 0, 0, 0, 0],
 		[0, 0, 0, 0, 0, 0, 0],
@@ -627,16 +669,24 @@ def draw_exact_spelling_barcharts(results: list[response], output_prefix: str, s
 			bar_left_edge += bar_score
 			bar.set_label(label_name)
 			bars.append(bar)
-	axes.set(xlabel="Raw Vote Count", ylabel="", ylim=(-1, 23.5), xlim=(-1000, 1000))
-	axes.set_yticks([0, 1.5, 3, 4.5, 6, 7.5, 9, 10.5, 12, 13.5, 15, 16.5, 18, 19.5, 21, 22.5], [";\n".join(s.split("; ")) for s in response.index_to_exact_spelling_associations])
+	axes.set(ylabel="", ylim=(-1, 23.5), xlim=(-1000, 1000))
+	axes.set_xlabel("Raw Vote Count", path_effects=stroke_effects)
+	axes.set_xticks(numpy.arange(-1000, 1000, 250),
+			  [str(x) for x in numpy.arange(-1000, 1000, 250)],
+			  path_effects=stroke_effects)
+	axes.set_yticks([0, 1.5, 3, 4.5, 6, 7.5, 9, 10.5, 12, 13.5, 15, 16.5, 18, 19.5, 21, 22.5],
+			  [";\n".join(s.split("; ")) for s in response.index_to_exact_spelling_associations],
+			  path_effects=stroke_effects)
 	axes.grid(True)
 	axes.legend(bars[:len(response.index_to_score_name_associations)],
 		   response.index_to_score_name_associations,
 		   loc="upper left", bbox_to_anchor=(1, 0.5))
-	axes.set_title("Preferred Exact Spelling")
+	title_text = axes.set_title("Preferred Exact Spelling")
+	title_text.set_color("#000F")
+	title_text.set_path_effects(stroke_effects)
 	figures.set_figwidth(figures.get_figwidth() * 2.8)
 	figures.set_figheight(figures.get_figheight() * 1.8)
-	figures.savefig(output_prefix + "_exact_spelling_preference.png")
+	figures.savefig(output_prefix + "_exact_spelling_preference.png", transparent=True)
 	matplotlib.pyplot.close('all')
 
 
