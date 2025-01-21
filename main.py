@@ -26,6 +26,16 @@ class response:
 		"20 to 30 years": 5,
 		"30+ years": 6
 	}
+	last_use_associations = {
+		"": 0,
+		"Unansweered": 0,
+		"Recently (0 to 2 years ago)": 1,
+		"2 to 5 years ago": 2,
+		"5 to 10 years ago": 3,
+		"10 to 20 years ago": 4,
+		"20 to 30 years ago": 5,
+		"30+ years ago": 6
+	}
 	name_to_score_associations = {
 		"Extreme Dislike (Most Hated)": -5,
 		"Extreme Dislike": -5,
@@ -231,7 +241,7 @@ def parse_question_answer(question_number, current_response: response,
 		case 2:
 			current_response.skill_level = line
 		case 3:
-			current_response.last_use = line
+			current_response.last_use = "Recently (0 to 2 years ago)" if line == "Recently (0-2 years ago)" else line
 		case 4:
 			current_response.usage_experience = line
 		case 5:
@@ -364,7 +374,7 @@ def parse_all_counted_data_into(lines):
 def write_data(results : list[response], output_prefix, seed):
 	with open(output_prefix + "_data.csv", "w", encoding="utf-8") as f:
 		# descriptive headers
-		header_line = "response_id,last_use,skill_level,"
+		header_line = "response_id,last_use,usage_experience,skill_level,"
 		for label in response.index_to_spelling_associations:
 			header_label = csv_string_escape(label)
 			header_line += f"\"{header_label}\","
@@ -378,7 +388,7 @@ def write_data(results : list[response], output_prefix, seed):
 		f.write(header_line)
 		# rest of the data
 		for result in results:
-			line = f"{result.id},{result.last_use},{result.skill_level}"
+			line = f"{result.id},{result.last_use},{result.usage_experience},{result.skill_level}"
 			for s in result.spelling:
 				line += f",{s}"
 			for d in result.delivery:
@@ -492,6 +502,36 @@ def draw_skill_piecharts(results: list[response], output_prefix: str, seed: int)
 		t.set_color("#000F")
 		t.set_path_effects(stroke_effects)
 	figures.savefig(output_prefix + "_skills.png", transparent=True)
+	matplotlib.pyplot.close('all')
+
+def draw_last_use_piecharts(results: list[response], output_prefix: str, seed: int):
+	label_counts: dict[str, int] = {}
+	for result in results:
+		if not label_counts.get(result.last_use):
+			label_counts[result.last_use] = 0
+		label_counts[result.last_use] += 1
+	
+	sorted_label_counts = sorted(list(label_counts.items()), key=lambda item: response.last_use_associations[item[0]])
+	label_counts: dict[str, int] = dict(sorted_label_counts)
+
+	labels = [x if x != "" else "(Unanswered)" for x in label_counts]
+	sizes = [label_counts[x] for x in label_counts]
+
+	figures, axes = matplotlib.pyplot.subplots()
+	figures.set_figwidth(21)
+	figures.set_figheight(20)
+	stroke_effects = [matplotlib.patheffects.withStroke(linewidth=2, foreground="white")]
+	title_text = axes.set_title("Respondent Last Time Using C")
+	_, texts = axes.pie(sizes, counterclock=False, labels=labels, hatch=score_hatches)
+
+	title_text.set_fontsize(48)
+	title_text.set_color("#000F")
+	title_text.set_path_effects(stroke_effects)
+	for t in texts:
+		t.set_fontsize(20)
+		t.set_color("#000F")
+		t.set_path_effects(stroke_effects)
+	figures.savefig(output_prefix + "_last_use.png", transparent=True)
 	matplotlib.pyplot.close('all')
 
 def draw_experience_piecharts(results: list[response], output_prefix: str, seed: int):
@@ -693,6 +733,7 @@ def draw_exact_spelling_barcharts(results: list[response], output_prefix: str, s
 def draw_graphs(results: list[response], output_prefix: str, seed: int):
 	draw_skill_piecharts(results, output_prefix, seed)
 	draw_experience_piecharts(results, output_prefix, seed)
+	draw_last_use_piecharts(results, output_prefix, seed)
 	draw_spelling_barcharts(results, output_prefix, seed)
 	draw_delivery_barcharts(results, output_prefix, seed)
 	draw_exact_spelling_barcharts(results, output_prefix, seed)
