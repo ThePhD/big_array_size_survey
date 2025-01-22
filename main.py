@@ -371,7 +371,7 @@ def parse_all_counted_data_into(lines):
 	return results
 
 
-def write_data(results : list[response], output_prefix, seed):
+def write_csv_data(results : list[response], output_prefix, seed):
 	with open(output_prefix + "_data.csv", "w", encoding="utf-8") as f:
 		# descriptive headers
 		header_line = "response_id,last_use,usage_experience,skill_level,"
@@ -384,7 +384,7 @@ def write_data(results : list[response], output_prefix, seed):
 		for label in response.index_to_exact_spelling_associations:
 			header_label = csv_string_escape(label)
 			header_line += f"\"{header_label}\","
-		header_line += ",comment"
+		header_line += "comment\n"
 		f.write(header_line)
 		# rest of the data
 		for result in results:
@@ -413,7 +413,7 @@ def draw_city_distribution(results: list[response], output_prefix, seed):
 		
 	cloud = wordcloud.WordCloud(background_color="white", colormap="plasma",
 					    max_words=len(cities_and_countries),
-					    width=1600, height=1200)
+					    width=1600, height=1200,)
 	cloud.generate_from_frequencies(cities_and_countries)
 	img = cloud.to_image().convert("RGBA")
 	for x in range(0, img.width):
@@ -767,7 +767,7 @@ def main():
 			input_data = f.readlines()
 		survey_results.extend(parse_all_counted_data_into(input_data))
 
-	write_data(survey_results, args.output_prefix, args.seed)
+	write_csv_data(survey_results, args.output_prefix, args.seed)
 	draw_map(survey_results, args.output_prefix, args.seed)
 	draw_city_distribution(survey_results, args.output_prefix, args.seed)
 	draw_graphs(survey_results, args.output_prefix, args.seed)
