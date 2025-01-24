@@ -12,7 +12,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 11,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,3,-1,1,1,-1,5,3,-1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"I only do a little bit of C programming every few years, usually because I’m the only person around who is willing to do it."
 12,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,1,1,5,-1,-1,3,3,-5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"It would be wise to consider a sister keyword that’s “last element of” and get rid of the `- 1` that surprises novice users and tired code reviewers"
 13,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,1,1,5,-3,-1,-1,-1,-1,3,-1,-1,1,-1,-1,-1,-1,-1,-1,1,-3,5,-1,-1,-1,-1,
-14,2 to 5 years ago,2 to 5 years,Software Mentor, Professor / Teacher, or Trainer,1,1,3,-3,-1,3,1,-1,3,-1,1,1,1,5,5,1,1,1,3,5,5,-3,-3,-3,-1,
+14,2 to 5 years ago,2 to 5 years,Software Mentor; Professor / Teacher; Trainer,1,1,3,-3,-1,3,1,-1,3,-1,1,1,1,5,5,1,1,1,3,5,5,-3,-3,-3,-1,
 15,Recently (0 to 2 years ago),10 to 20 years,Hobbyist / Personal Projects,1,3,1,-3,-3,-5,-3,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 16,Recently (0 to 2 years ago),20 to 30 years,Academic / Research Software Development,1,5,-1,-3,-3,-1,3,3,5,3,3,5,-1,-1,-1,1,1,1,-1,-1,-1,-3,-3,-3,-3,"Thanks for doing this."
 17,2 to 5 years ago,2 to 5 years,Professional / Industrial Software Development,5,5,3,-5,-5,3,3,-5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -100,24 +100,24 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 99,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,1,-1,3,3,3,-1,3,-1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 100,Recently (0 to 2 years ago),2 to 5 years,Academic / Research Software Development,3,3,5,-1,-5,-3,5,-5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 101,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,1,1,5,3,3,-3,3,-3,5,-3,1,3,-5,-3,-3,-3,1,3,-3,3,5,-3,1,3,3,
-102,Recently (0 to 2 years ago),20 to 30 years,Software Mentor, Professor / Teacher, or Trainer,-5,1,5,-5,-5,-5,1,-5,5,-5,-5,-5,-5,-5,-5,-5,-5,-5,1,3,5,-5,-5,-5,-5,
+102,Recently (0 to 2 years ago),20 to 30 years,Software Mentor; Professor / Teacher; Trainer,-5,1,5,-5,-5,-5,1,-5,5,-5,-5,-5,-5,-5,-5,-5,-5,-5,1,3,5,-5,-5,-5,-5,
 103,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,1,-1,5,-3,-5,-5,-5,-3,5,-5,-5,1,-5,-5,-3,-5,-5,3,-5,-5,5,-5,-5,-3,-1,
 104,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-3,-1,5,-3,-5,3,-3,-5,5,-3,-1,-1,-1,1,3,-3,-3,-3,-3,3,5,-5,-3,-1,-3,
-105,Recently (0 to 2 years ago),10 to 20 years,Software Mentor, Professor / Teacher, or Trainer,5,-3,0,-3,-3,1,5,-5,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+105,Recently (0 to 2 years ago),10 to 20 years,Software Mentor; Professor / Teacher; Trainer,5,-3,0,-3,-3,1,5,-5,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 106,2 to 5 years ago,Recently (0 to 2 years),Hobbyist / Personal Projects,-3,3,3,-1,-3,-1,-3,-1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 107,Recently (0 to 2 years ago),10 to 20 years,Hobbyist / Personal Projects,-3,3,1,-3,-5,5,5,-5,3,-3,1,3,-3,3,5,-3,-1,-3,-3,1,3,-5,-3,-3,-3,"using _Under naming and not including a macro in a header would be frustrating"
 108,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-1,-1,1,5,3,-3,3,-3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 109,Recently (0 to 2 years ago),5 to 10 years,Hobbyist / Personal Projects,3,3,3,-1,-3,-3,-1,1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"_Howmany()"
 110,Recently (0 to 2 years ago),2 to 5 years,Academic / Research Software Development,5,-1,1,-3,-3,-5,-1,-5,3,-5,-3,-1,-5,-3,-3,-3,1,5,-5,1,3,-5,-5,-5,-5,
 111,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-3,-3,5,1,3,3,1,-3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"My concern is confusing the count of items in the array with the size (or length) of the array in bytes. Names with \"count\" and \"element\" in them help me. I'm unsure about what \"length\" means at first glance, even with having done more python than anything recently."
-112,Recently (0 to 2 years ago),10 to 20 years,Software Mentor, Professor / Teacher, or Trainer,1,3,5,-3,1,3,5,-3,1,-1,3,-3,-1,5,1,-1,1,-1,-1,5,-3,-1,3,1,1,
+112,Recently (0 to 2 years ago),10 to 20 years,Software Mentor; Professor / Teacher; Trainer,1,3,5,-3,1,3,5,-3,1,-1,3,-3,-1,5,1,-1,1,-1,-1,5,-3,-1,3,1,1,
 113,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,3,5,-1,1,-3,-5,1,-5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 114,Recently (0 to 2 years ago),10 to 20 years,Academic / Research Software Development,-1,1,5,-5,-3,3,-1,-3,5,-3,-1,1,-3,-1,3,-3,-3,-1,-3,-3,5,-5,-5,-5,-3,
 115,10 to 20 years ago,5 to 10 years,Professional / Industrial Software Development,-3,-1,3,-5,-5,1,-1,-5,3,-5,-3,-1,-5,1,5,-5,-3,-3,-5,-1,3,-5,-5,-5,-5,"Have some guts for land's sake and just add the dang keyword!"
 116,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,3,1,1,-1,-1,-3,3,-3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Thank you for gathering user feedback on stuff like this!"
 117,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,5,3,3,-5,-5,-5,3,-5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 118,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,-3,-1,-1,-5,-5,5,0,0,0,0,-3,-3,3,3,0,-3,-3,-3,-1,-1,-1,-3,-3,-3,-3,
-119,Recently (0 to 2 years ago),30+ years,Software Mentor, Professor / Teacher, or Trainer,3,3,5,1,-1,-3,5,-5,-5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"I am still writing C1999 code and I expect to be doing so forever.  In my opinion the best option of all (not on this list) would be to withdraw C2x, disband WG14 and never put out another revision of the C standard. Let C be *done*."
+119,Recently (0 to 2 years ago),30+ years,Software Mentor; Professor / Teacher; Trainer,3,3,5,1,-1,-3,5,-5,-5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"I am still writing C1999 code and I expect to be doing so forever.  In my opinion the best option of all (not on this list) would be to withdraw C2x, disband WG14 and never put out another revision of the C standard. Let C be *done*."
 120,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-5,-5,1,-1,5,-1,5,-3,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 121,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,-5,5,-1,-5,3,1,-1,-1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 122,Recently (0 to 2 years ago),30+ years,Professional / Industrial Software Development,-3,1,5,-3,-3,-1,-1,1,5,-3,-3,1,-5,-5,-5,-3,-3,-3,3,3,5,-1,-3,1,-3,
@@ -128,13 +128,13 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 127,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,1,5,1,3,1,3,1,-3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 128,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,5,1,1,-5,-3,-1,-5,-3,5,-5,-5,1,-5,-5,1,-5,-5,5,-5,-5,3,-5,-5,-3,-3,
 129,Recently (0 to 2 years ago),30+ years,Professional / Industrial Software Development,3,5,-1,-1,1,-1,0,0,5,-1,1,5,-1,-1,-1,-1,1,3,-1,-1,1,-1,-1,1,3,
-130,Recently (0 to 2 years ago),30+ years,Software Mentor, Professor / Teacher, or Trainer,-5,-5,5,3,3,-5,1,3,5,-5,-5,-5,-5,-5,-5,-5,-5,-5,5,3,5,1,-1,1,1,
+130,Recently (0 to 2 years ago),30+ years,Software Mentor; Professor / Teacher; Trainer,-5,-5,5,3,3,-5,1,3,5,-5,-5,-5,-5,-5,-5,-5,-5,-5,5,3,5,1,-1,1,1,
 131,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,5,3,1,-1,-3,1,3,-3,1,-3,3,1,-3,1,1,-3,5,3,-3,-1,-1,-5,-3,-3,-3,
 132,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-5,-1,5,-5,-3,3,-1,1,3,-3,0,-1,1,0,3,-5,-5,-5,1,0,5,-5,-5,-5,-5,
 133,10 to 20 years ago,5 to 10 years,Professional / Industrial Software Development,-3,-3,1,-3,-1,5,3,-1,5,-5,-5,-5,3,5,5,-5,-5,-5,1,3,3,-3,-3,-3,-1,"I am mainly a C++ developer and WG21 member.  I would prefer \"extentof\" for better alignment with C++."
 134,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-5,-5,-5,-5,-5,5,-3,-1,3,-3,-3,-3,3,3,5,-3,-3,-3,-3,-3,-1,-1,-1,-1,-1,"Extent is the only thing that properly reflects what is going on.  \"Count\",and  \"Len\" both imply stuff that isn't intended to be reflected here.  the \"nelemsof\"/\"nelementsof\" are a distant second, but the meaning of 'n' there is kinda opaque."
 135,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-1,1,1,-5,-5,-5,-1,-1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-136,Recently (0 to 2 years ago),30+ years,Software Mentor, Professor / Teacher, or Trainer,1,1,5,-1,-1,-5,5,-5,1,-1,1,-5,-5,-5,-5,-1,1,-5,3,5,-1,-3,-1,-3,-1,"I mentor C in person; having an operator which can be easily pronounced and is unambiguous in oral usage would be a significant asset. 'lengthof' and 'countof' both meet that requirement."
+136,Recently (0 to 2 years ago),30+ years,Software Mentor; Professor / Teacher; Trainer,1,1,5,-1,-1,-5,5,-5,1,-1,1,-5,-5,-5,-5,-1,1,-5,3,5,-1,-3,-1,-3,-1,"I mentor C in person; having an operator which can be easily pronounced and is unambiguous in oral usage would be a significant asset. 'lengthof' and 'countof' both meet that requirement."
 137,Recently (0 to 2 years ago),30+ years,Professional / Industrial Software Development,3,5,5,-3,-5,-1,-3,-1,5,-3,3,5,-3,-1,1,-3,1,3,-3,3,5,-3,-1,1,1,
 138,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,1,1,3,1,-3,3,5,1,-3,-1,1,-3,-1,3,-3,-1,1,-3,-1,3,-3,-1,1,-3,-3,
 139,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,1,-1,5,-5,-5,-3,-5,-3,5,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,
@@ -180,7 +180,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 179,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,1,1,5,-3,-3,-1,1,-1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 180,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,1,1,3,-1,-3,-3,-3,-3,3,-3,-3,3,-3,-3,-3,-1,-1,1,-3,-3,3,-3,-3,-1,-3,
 181,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,-5,-5,5,-3,-1,-5,5,1,5,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,
-182,Recently (0 to 2 years ago),5 to 10 years,Software Mentor, Professor / Teacher, or Trainer,3,5,1,-3,-3,-1,-3,-1,3,0,0,5,0,0,0,0,0,0,0,0,0,0,-5,0,0,"Keep up the good work."
+182,Recently (0 to 2 years ago),5 to 10 years,Software Mentor; Professor / Teacher; Trainer,3,5,1,-3,-3,-1,-3,-1,3,0,0,5,0,0,0,0,0,0,0,0,0,0,-5,0,0,"Keep up the good work."
 183,Recently (0 to 2 years ago),30+ years,Professional / Industrial Software Development,1,3,5,-3,-3,-5,5,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 184,10 to 20 years ago,Recently (0 to 2 years),Professional / Industrial Software Development,-3,3,-3,-5,-3,1,1,-3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 185,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-1,3,3,-3,-3,-3,-1,1,3,3,1,3,-3,-3,-3,1,-1,3,1,-1,3,-3,-3,-3,-3,"hi"
@@ -212,7 +212,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 211,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-1,3,1,-3,-1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 212,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,5,3,1,3,-3,-5,-1,-1,5,-3,-3,-3,-3,-5,0,1,1,5,-1,-1,1,-3,-3,3,1,
 213,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-3,1,3,-3,-3,-3,3,1,3,1,-1,1,-3,-3,-3,-5,-5,-5,1,-3,1,-5,-5,-5,-5,
-214,Recently (0 to 2 years ago),10 to 20 years,Software Mentor, Professor / Teacher, or Trainer,-1,1,-5,-5,-5,-3,-1,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+214,Recently (0 to 2 years ago),10 to 20 years,Software Mentor; Professor / Teacher; Trainer,-1,1,-5,-5,-5,-3,-1,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 215,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,3,3,1,-1,-3,-3,3,-3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 216,Recently (0 to 2 years ago),Recently (0 to 2 years),Professional / Industrial Software Development,1,5,-1,-3,1,1,1,-1,5,-1,1,5,-1,1,1,-3,1,3,-3,-3,-1,-5,-3,-1,1,"condensed versions make the intent hard to parse when first reading. Especially nelemsof. Learnable, but makes the language that much more difficult to get into"
 217,Recently (0 to 2 years ago),5 to 10 years,Academic / Research Software Development,3,3,5,3,0,-5,1,-5,5,-1,1,5,-5,-5,-5,-3,1,3,-1,1,5,-1,1,5,-1,
@@ -223,7 +223,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 222,Recently (0 to 2 years ago),5 to 10 years,Academic / Research Software Development,-1,-3,3,1,-1,-1,3,3,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"thank you for doing this!"
 223,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,5,3,-1,1,-3,-5,-1,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 224,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,0,0,1,-1,-3,-5,3,-3,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-225,Recently (0 to 2 years ago),10 to 20 years,Software Mentor, Professor / Teacher, or Trainer,1,3,3,1,-3,-1,3,-5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"I would like macro headers (like stdbool.h, stdalign.h, assert.h (I think?)) if we could get all of the ones relevant to a given version of C under one single umbrella header, like stdc23.h or similar"
+225,Recently (0 to 2 years ago),10 to 20 years,Software Mentor; Professor / Teacher; Trainer,1,3,3,1,-3,-1,3,-5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"I would like macro headers (like stdbool.h, stdalign.h, assert.h (I think?)) if we could get all of the ones relevant to a given version of C under one single umbrella header, like stdc23.h or similar"
 226,Recently (0 to 2 years ago),5 to 10 years,Academic / Research Software Development,5,1,3,-3,-3,-3,1,-3,3,-3,3,3,-3,-1,-3,-3,3,3,-3,1,1,-3,-3,-5,-5,
 227,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-3,3,1,3,1,-1,5,1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 228,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,-3,-3,5,-5,1,-1,-5,-3,5,-5,-5,-5,-5,-5,-1,-5,-5,-5,-1,-3,5,-3,-3,-3,-1,
@@ -240,7 +240,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 239,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,3,1,5,-1,-1,-3,-5,-3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 240,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,1,3,3,-3,-3,1,3,-3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 241,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,-3,5,1,-5,-5,3,-5,-3,5,-3,-3,5,-3,-5,3,-3,-5,-3,-3,-5,1,-3,-5,-5,-5,
-242,Recently (0 to 2 years ago),5 to 10 years,Software Mentor, Professor / Teacher, or Trainer,1,5,3,1,1,1,-1,1,3,1,1,5,1,1,1,1,1,3,1,1,3,1,1,1,1,
+242,Recently (0 to 2 years ago),5 to 10 years,Software Mentor; Professor / Teacher; Trainer,1,5,3,1,1,1,-1,1,3,1,1,5,1,1,1,1,1,3,1,1,3,1,1,1,1,
 243,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,1,3,3,-5,-5,-1,0,0,0,3,3,3,-1,-1,-1,1,1,1,3,3,3,-5,-5,-5,-5,"C should get namespaces, then we would not need _Underscore style naming"
 244,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,-1,-3,3,-1,-3,3,0,3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 245,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-3,5,-1,-5,-5,-1,5,-1,-5,1,5,-5,-3,-1,-5,-5,-5,-5,-3,-1,-5,-5,-5,-5,-5,
@@ -274,11 +274,11 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 273,Recently (0 to 2 years ago),20 to 30 years,Hobbyist / Personal Projects,5,1,3,-1,-3,-5,-1,-5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"A macro definition would be much less objectionable if it could be brought in with an #include like &lt;stdc2y.h&gt; that includes all of the new \"keywords\" of that and previous standards.  Basically, &lt;stdnoreturn.h&gt; was not terribly useful, but a &lt;stdc11.h&gt; (which would #include &lt;stdnoreturn.h&gt;, &lt;stdalign.h&gt;, &lt;stdc99.h&gt; etc) would have been."
 274,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-3,5,5,-5,-5,-5,3,-5,3,-5,3,5,-5,-5,-5,-5,-1,-5,-5,3,5,-5,-5,-5,-5,"no."
 275,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-3,1,1,-3,-1,3,-1,-5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"I prefer the term \"extent\" over both \"count\" and \"length\" because the latter terms to me imply that they are talking about the initialized part of the array only. A resizable array (std::vector in C++) has two measurements: the number of elements that are currently used (size in C++), and the number of elements that was allocated (capacity in C++)."
-276,Recently (0 to 2 years ago),5 to 10 years,Software Mentor, Professor / Teacher, or Trainer,1,-1,-1,-5,-3,-3,-3,-3,5,-1,-1,1,-3,-3,-3,-3,-3,-1,-3,-3,-1,-5,-5,-3,-3,"it should be \"length\", plain and simple. To ease the transition to/from Java."
+276,Recently (0 to 2 years ago),5 to 10 years,Software Mentor; Professor / Teacher; Trainer,1,-1,-1,-5,-3,-3,-3,-3,5,-1,-1,1,-3,-3,-3,-3,-3,-1,-3,-3,-1,-5,-5,-3,-3,"it should be \"length\", plain and simple. To ease the transition to/from Java."
 277,Recently (0 to 2 years ago),5 to 10 years,Hobbyist / Personal Projects,1,3,5,-1,-3,-3,-1,1,5,-3,-3,-1,-3,-3,1,-3,-3,1,-3,-3,5,-3,-3,-1,-1,
-278,Recently (0 to 2 years ago),2 to 5 years,Software Mentor, Professor / Teacher, or Trainer,-1,5,1,-3,-5,3,5,-5,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+278,Recently (0 to 2 years ago),2 to 5 years,Software Mentor; Professor / Teacher; Trainer,-1,5,1,-3,-5,3,5,-5,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 279,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,3,5,5,-1,-3,-1,-1,-5,5,-5,-3,5,-5,-3,-1,-5,-3,-1,-3,1,5,-5,-3,1,-1,
-280,Recently (0 to 2 years ago),20 to 30 years,Software Mentor, Professor / Teacher, or Trainer,-5,5,3,-5,3,1,-3,-3,5,0,0,5,0,0,0,0,0,0,3,0,3,0,0,0,3,
+280,Recently (0 to 2 years ago),20 to 30 years,Software Mentor; Professor / Teacher; Trainer,-5,5,3,-5,3,1,-3,-3,5,0,0,5,0,0,0,0,0,0,3,0,3,0,0,0,3,
 281,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,1,1,5,1,1,-1,5,1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 282,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,5,1,3,-1,-3,1,3,-3,-1,-3,1,1,-3,-1,-1,-3,5,-1,-3,3,-1,-3,1,-1,-1,
 283,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,-1,5,1,-3,1,-5,5,0,-5,0,5,1,-3,-3,-3,-3,-3,-3,3,3,-3,0,0,0,0,
@@ -298,7 +298,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 297,Recently (0 to 2 years ago),10 to 20 years,Academic / Research Software Development,-3,3,1,-5,-3,-3,-3,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 298,Recently (0 to 2 years ago),Recently (0 to 2 years),Just Reading / Just Learning,-3,3,5,-3,1,3,1,-5,5,-5,1,3,-5,1,3,-5,-5,-5,-5,3,5,-5,-3,1,3,"_Keyword is not very ergonomic for how common this operator is. And I guess most users would expect a similar spelling to sizeof et al as possible. Thanks for the survey :)"
 299,Recently (0 to 2 years ago),5 to 10 years,Academic / Research Software Development,1,3,3,-1,-1,-1,1,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-300,Recently (0 to 2 years ago),30+ years,Software Mentor, Professor / Teacher, or Trainer,3,5,-1,-3,-3,-5,3,1,5,3,3,5,-3,-3,-3,-1,-1,-3,-1,-1,-3,-3,-3,-5,-5,"The language (I didn't say the committee) is suffering BADLY from paralysis. Fiascos like taking 30 years to add true and false can't continue to happen. If someone has a symbol named 'false' or 'lengthof' and has specified --gimme-C26 then they can take on the minute-long global search and replace in cscope, CLion, or (very carefully) sed.  Identifiers clash all the time in new development environments. They SHOULDN'T, but because there's not a contact between the set of symbols and behavoiurs requested and those available - this is just the kind of thing that developers of ACTIVELY MAINTAINED code expect.  The failure case is obvious and trivial to fix. Pick a good identifier (lengthof is like sizeof), don't hide it behind the presence of an include &lt;stdthing.h&gt; to activate it, and rip the bandaid off. Old code can stay on old compilers. When the old compilers don't run on computers that can be bought, borrowed, emulated, or virtualized, and a change MUST be made, then someone needs to exit denial and actually pay/bribe a programmer to actively maintain the stupid code.  Love your writing. Stay awesome!"
+300,Recently (0 to 2 years ago),30+ years,Software Mentor; Professor / Teacher; Trainer,3,5,-1,-3,-3,-5,3,1,5,3,3,5,-3,-3,-3,-1,-1,-3,-1,-1,-3,-3,-3,-5,-5,"The language (I didn't say the committee) is suffering BADLY from paralysis. Fiascos like taking 30 years to add true and false can't continue to happen. If someone has a symbol named 'false' or 'lengthof' and has specified --gimme-C26 then they can take on the minute-long global search and replace in cscope, CLion, or (very carefully) sed.  Identifiers clash all the time in new development environments. They SHOULDN'T, but because there's not a contact between the set of symbols and behavoiurs requested and those available - this is just the kind of thing that developers of ACTIVELY MAINTAINED code expect.  The failure case is obvious and trivial to fix. Pick a good identifier (lengthof is like sizeof), don't hide it behind the presence of an include &lt;stdthing.h&gt; to activate it, and rip the bandaid off. Old code can stay on old compilers. When the old compilers don't run on computers that can be bought, borrowed, emulated, or virtualized, and a change MUST be made, then someone needs to exit denial and actually pay/bribe a programmer to actively maintain the stupid code.  Love your writing. Stay awesome!"
 301,Recently (0 to 2 years ago),30+ years,Professional / Industrial Software Development,-1,1,5,-5,-5,-5,-5,-3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 302,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-5,1,-1,-1,3,5,5,-5,3,-5,1,1,-5,5,3,-5,-5,-5,-5,-1,-1,-5,-1,-1,3,
 303,2 to 5 years ago,Recently (0 to 2 years),Hobbyist / Personal Projects,-1,1,3,-5,-3,-3,1,-3,3,-3,1,1,-5,-3,-3,-3,-1,-1,-1,3,5,-3,-3,-3,-3,"mostly a C++ user, only used C a few times to make small changes to existing programs"
@@ -316,7 +316,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 315,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,-5,5,5,-5,-5,-5,-5,-5,5,-5,-5,5,-5,-5,-5,-5,-5,-5,-5,-5,5,-5,-5,-5,-5,
 316,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,5,1,3,-1,-3,-3,3,-5,-1,-5,1,1,-5,-1,-3,-5,5,1,-5,3,1,-5,-1,-1,-3,
 317,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-1,3,5,-1,-1,3,3,-1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-318,Recently (0 to 2 years ago),20 to 30 years,Software Mentor, Professor / Teacher, or Trainer,0,3,0,0,0,0,-1,3,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+318,Recently (0 to 2 years ago),20 to 30 years,Software Mentor; Professor / Teacher; Trainer,0,3,0,0,0,0,-1,3,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 319,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,1,-1,3,-3,-3,-5,-5,3,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 320,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,-1,1,5,-5,-5,-5,1,-5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 321,Recently (0 to 2 years ago),Recently (0 to 2 years),Just Reading / Just Learning,-1,3,3,-1,-3,5,0,-5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -354,7 +354,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 353,2 to 5 years ago,2 to 5 years,Professional / Industrial Software Development,3,3,5,-5,-3,-3,3,-5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"I think \"non-power\" users of C (i.e., people not responding to surverys) are much less likely to care about whether it is defined as a lowercase keyword vs a macro, but would strongly dislike _Keyword only."
 354,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,1,-3,5,3,5,-5,1,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 355,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-3,5,3,1,-1,-5,-3,-5,5,-3,3,5,-3,-1,-1,-3,-1,-1,-3,1,1,-3,1,1,-1,"Just use a normal keyword please. The whole underscore capital thing is dumb. Yes you risk clashing with identifiers, but 99% of people will not upgrade to anything beyond C11 for the next 20 years anyways."
-356,2 to 5 years ago,5 to 10 years,Software Mentor, Professor / Teacher, or Trainer,5,1,-1,-1,-3,-5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+356,2 to 5 years ago,5 to 10 years,Software Mentor; Professor / Teacher; Trainer,5,1,-1,-1,-3,-5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 357,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,1,5,-1,-3,-5,-3,-1,-1,5,-3,-3,5,-3,-3,-1,-3,-3,1,-3,-3,-1,-3,-3,-3,-3,
 358,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,1,5,-1,-1,-1,-1,-1,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 359,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,3,1,1,-3,-3,-3,0,0,3,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,
@@ -371,12 +371,12 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 370,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-1,1,1,-3,-3,-1,0,1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 371,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,5,3,1,-3,-3,-5,3,-5,5,-5,1,3,-5,-3,-3,-5,3,5,-5,1,3,-5,-3,-3,-3,
 372,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-1,1,5,0,3,-1,3,-3,5,-3,1,3,-3,-1,-1,-3,-1,-3,-1,3,5,-3,-1,-1,1,
-373,Recently (0 to 2 years ago),5 to 10 years,Software Mentor, Professor / Teacher, or Trainer,-1,1,-1,-1,-3,3,-3,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"It's great to have C get better and better and this looks like yet a great addition to the language. Please continue on this track :)"
+373,Recently (0 to 2 years ago),5 to 10 years,Software Mentor; Professor / Teacher; Trainer,-1,1,-1,-1,-3,3,-3,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"It's great to have C get better and better and this looks like yet a great addition to the language. Please continue on this track :)"
 374,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-1,3,-1,1,3,3,3,-3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 375,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,5,5,5,-1,-1,0,-1,-1,3,-1,1,3,-1,1,3,-1,1,3,-1,1,3,-1,1,3,-1,
 376,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,-1,1,1,-3,-5,5,-1,-5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Mostly I'm just glad it's finally being added! Happy to contribute to bikeshedding the name, but just do it already."
 377,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,1,3,5,-5,-3,-1,5,-3,1,-5,3,-1,-3,1,-1,-3,-1,-3,-5,5,-1,-5,-3,-3,-1,
-378,Recently (0 to 2 years ago),20 to 30 years,Software Mentor, Professor / Teacher, or Trainer,-1,5,1,-1,-1,-5,-3,-3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+378,Recently (0 to 2 years ago),20 to 30 years,Software Mentor; Professor / Teacher; Trainer,-1,5,1,-1,-1,-5,-3,-3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 379,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,1,1,5,-5,-5,-5,3,3,-5,1,-5,-5,-5,-5,-5,5,3,3,3,1,0,-5,-5,-5,-5,
 380,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-1,3,5,1,-1,1,5,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 381,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-3,-1,-1,-5,-5,-5,5,5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"ARRAY_SIZE or _Arraysize or array_size. Having \"array\" in the name mostly solves any string null terminator confusion. \"ARRAY_SIZE\" is an existing convention I've seen in many codebases."
@@ -398,7 +398,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 397,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,5,0,0,-5,-5,0,0,-5,0,-5,0,0,-5,0,0,-5,5,0,-5,0,0,-5,-5,-5,-5,
 398,2 to 5 years ago,5 to 10 years,Professional / Industrial Software Development,-1,-1,-1,-3,-1,-1,3,-1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"_Count is also good, and _PascalCase would be very nice indeed - \"nelemsof\" looks like \"lelem sof\" to my eyes. I'd get used to it but it's not good. C.f. \"Header\" -&gt; This is wildly out of scope but having a single \"keywords2Y\" compatibility header would be nice (I bet that might also allow static array extents in C++ if it had the correct macro replacement with auto and requires)"
 399,10 to 20 years ago,2 to 5 years,Professional / Industrial Software Development,-1,3,3,-1,-1,3,5,-3,-5,-3,3,-5,-3,5,-5,-3,-1,-5,-3,5,-5,-3,1,-5,-5,
-400,Recently (0 to 2 years ago),30+ years,Software Mentor, Professor / Teacher, or Trainer,3,5,3,1,5,-5,3,-5,5,-1,1,5,-5,-5,-5,-3,1,3,-5,1,3,-5,1,1,5,"Would something like array_length make it clear that it's similar to sizeof, not strlen, in regards to '\0' terminator being counted? Something len/length might not make clear as mentioned in the blog post."
+400,Recently (0 to 2 years ago),30+ years,Software Mentor; Professor / Teacher; Trainer,3,5,3,1,5,-5,3,-5,5,-1,1,5,-5,-5,-5,-3,1,3,-5,1,3,-5,1,1,5,"Would something like array_length make it clear that it's similar to sizeof, not strlen, in regards to '\0' terminator being counted? Something len/length might not make clear as mentioned in the blog post."
 401,Recently (0 to 2 years ago),2 to 5 years,Academic / Research Software Development,-1,3,5,-5,-3,-1,1,-3,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 402,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,5,3,-1,-3,1,-5,-1,-5,5,-3,1,3,-5,-3,-5,1,3,5,-3,-1,-3,-5,-3,-3,1,
 403,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-1,-3,5,-3,-5,1,5,-5,3,-5,1,1,-3,1,3,-3,3,1,1,5,5,1,1,1,1,
@@ -414,7 +414,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 413,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,5,5,1,-5,-3,3,-3,3,5,-5,3,5,-5,1,3,-5,3,5,-5,-1,1,-5,-5,-3,1,
 414,Recently (0 to 2 years ago),Recently (0 to 2 years),Just Reading / Just Learning,-3,5,1,-5,-5,-5,5,-5,1,0,5,0,0,0,0,0,0,0,0,0,0,-5,0,0,0,
 415,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,1,5,3,-1,-1,-1,-1,-1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-416,Recently (0 to 2 years ago),5 to 10 years,Software Mentor, Professor / Teacher, or Trainer,1,3,5,-1,-5,-3,3,-3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+416,Recently (0 to 2 years ago),5 to 10 years,Software Mentor; Professor / Teacher; Trainer,1,3,5,-1,-5,-3,3,-3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 417,Recently (0 to 2 years ago),10 to 20 years,(Used to) Attend Standard Committee Meetings,1,5,-1,-3,-5,-5,-1,0,3,1,3,5,-5,-5,-3,1,1,3,-3,-3,-1,-5,-5,-5,-5,
 418,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-1,5,3,-5,-3,1,5,-5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 419,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,3,5,3,-3,-3,-3,3,-3,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Very excited about the possibility of having this in the standard. You're doing a fantastic job!"
@@ -443,7 +443,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 442,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,1,1,1,-3,-1,-3,-1,1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 443,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,-3,-3,5,-1,-1,-5,1,-5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Using Len in the name and allowing it on char arrays is going to be so confusing for new developers: lenof vs strlen is just not a distinction I want to ever have to explain. Also PLEASE at least add a macro. If the keyword looks like _Keyword, and there's no macro header, every single codebase is going to make their own macro. plsno."
 444,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,5,0,-1,-5,-5,-5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-445,Recently (0 to 2 years ago),30+ years,Software Mentor, Professor / Teacher, or Trainer,1,3,5,-1,-3,-5,3,1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+445,Recently (0 to 2 years ago),30+ years,Software Mentor; Professor / Teacher; Trainer,1,3,5,-1,-3,-5,3,1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 446,5 to 10 years ago,5 to 10 years,Hobbyist / Personal Projects,3,5,3,-1,-1,-1,3,1,-3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 447,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,3,5,-1,-3,-5,-3,1,-1,5,-1,1,5,-3,-3,-3,-1,1,3,-1,1,3,-3,-3,-3,-5,
 448,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-3,1,-1,-3,-3,-3,1,-5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"None of the options are amazing, but the feature is great, so I will accept anything really"
@@ -459,10 +459,10 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 458,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,3,1,-3,-3,-3,1,1,-3,5,-5,-1,3,-5,-3,1,-5,-1,5,-5,-3,1,-5,-3,-1,-1,
 459,Recently (0 to 2 years ago),30+ years,Professional / Industrial Software Development,-3,5,1,-3,-3,-5,-3,-3,1,0,3,5,-5,-5,-5,-3,-1,-3,-3,1,-3,-5,-5,-3,-3,"Whatever C++ will also accept, as std::size and general library bloat is anathema in many AAA game studios"
 460,Recently (0 to 2 years ago),5 to 10 years,Hobbyist / Personal Projects,-3,1,5,3,-1,1,-1,3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-461,Recently (0 to 2 years ago),20 to 30 years,Software Mentor, Professor / Teacher, or Trainer,-1,-1,1,-1,-1,3,3,1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Offering a macro in a new header allows testing for support via __has_include"
+461,Recently (0 to 2 years ago),20 to 30 years,Software Mentor; Professor / Teacher; Trainer,-1,-1,1,-1,-1,3,3,1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Offering a macro in a new header allows testing for support via __has_include"
 462,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,-1,3,5,-5,-3,1,5,-5,1,-5,3,-3,-5,1,-5,-5,-1,-5,-5,5,-3,-5,-5,-5,-5,"I believe that if a `rankof()` operator or similar is likely to be present in a future standard, it makes sense to use `extentof()` for C++ parity, but I otherwise feel like `countof()` is *to me* the most coherent, intuitive and clear term. I also believe that a `_Countof()` operator/macro definition makes the most sense because I suspect many codebases have oddhoc/oneoff implementaitons of it with a similar name and this allows for managing this."
 463,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,1,-1,5,-3,-5,3,3,5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Thank you for your great work in the comittee!"
-464,Recently (0 to 2 years ago),2 to 5 years,Software Mentor, Professor / Teacher, or Trainer,1,-1,-3,1,-5,0,3,-1,3,-1,-1,1,-1,-1,1,1,3,1,1,1,-1,1,1,-1,-5,
+464,Recently (0 to 2 years ago),2 to 5 years,Software Mentor; Professor / Teacher; Trainer,1,-1,-3,1,-5,0,3,-1,3,-1,-1,1,-1,-1,1,1,3,1,1,1,-1,1,1,-1,-5,
 465,Recently (0 to 2 years ago),30+ years,Professional / Industrial Software Development,1,3,5,-1,-5,-1,3,-5,5,-5,3,3,-5,-1,1,-5,1,1,-5,3,5,-5,-5,-5,-5,
 466,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,1,-3,5,-5,-5,-3,5,-5,1,-5,-5,-5,-1,-3,-5,-1,1,-3,3,5,3,-5,-5,-5,-5,
 467,Recently (0 to 2 years ago),Recently (0 to 2 years),Professional / Industrial Software Development,-1,-1,3,5,5,3,5,3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -516,7 +516,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 515,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,5,3,1,-1,1,-3,1,-3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"Have you considered `nof` ;-)"
 516,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,3,5,-1,1,-1,1,3,3,-1,5,5,-1,1,1,-3,3,3,-3,-1,-1,-5,1,1,-3,-5,
 517,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,-5,5,-5,-5,-5,-5,-1,-5,5,-5,-3,5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,
-518,Recently (0 to 2 years ago),10 to 20 years,Software Mentor, Professor / Teacher, or Trainer,-5,1,5,-5,-5,-5,1,-5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"The world is a dark place. Please bring light to darkness by standardising a build system and make compilation uncomplicated"
+518,Recently (0 to 2 years ago),10 to 20 years,Software Mentor; Professor / Teacher; Trainer,-5,1,5,-5,-5,-5,1,-5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"The world is a dark place. Please bring light to darkness by standardising a build system and make compilation uncomplicated"
 519,Recently (0 to 2 years ago),10 to 20 years,Academic / Research Software Development,3,-5,5,-1,-5,-5,5,-5,3,-5,-5,-5,-5,-5,-5,-1,3,3,-5,5,5,-5,1,1,-1,"This better be a constant time / compile time operation, I do not want hidden complexity to be introduced by this keyword."
 520,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,-1,5,0,-5,-5,-5,0,1,5,1,3,5,-5,-5,-5,1,1,3,1,1,1,-3,-3,-3,-3,
 521,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,1,5,1,-3,-1,-5,3,-3,-3,-3,5,-1,-5,-5,-5,-3,1,-1,-3,1,-1,-3,-1,-3,-3,
@@ -531,17 +531,17 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 530,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,3,5,5,-1,-3,1,5,-5,3,-5,5,3,-5,1,1,-5,5,3,-5,5,3,-5,1,1,1,
 531,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,5,3,3,-1,-1,-3,-3,-3,3,-3,-3,3,-5,-5,-5,-5,-5,5,-3,-3,3,-3,-3,1,1,
 532,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,5,1,-1,-5,-5,-5,-5,-5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-533,Recently (0 to 2 years ago),20 to 30 years,Software Mentor, Professor / Teacher, or Trainer,-1,5,1,-1,-3,-1,5,-3,-5,-3,5,-5,-3,-1,-5,-3,-1,-5,-3,1,-5,-3,-3,-5,-5,
+533,Recently (0 to 2 years ago),20 to 30 years,Software Mentor; Professor / Teacher; Trainer,-1,5,1,-1,-3,-1,5,-3,-5,-3,5,-5,-3,-1,-5,-3,-1,-5,-3,1,-5,-3,-3,-5,-5,
 534,Recently (0 to 2 years ago),30+ years,Professional / Industrial Software Development,3,5,-5,-1,1,-3,5,-1,1,-1,5,-3,-5,-3,-5,-1,3,-3,-5,-3,-5,-5,-1,-5,-5,
 535,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,1,5,-1,1,1,-3,-5,-1,3,-3,1,5,-3,1,3,-3,1,3,-3,1,3,-3,1,3,5,
 536,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,3,3,3,1,-3,-1,1,-5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 537,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,1,5,-5,-5,-5,-5,3,5,-5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-538,Recently (0 to 2 years ago),20 to 30 years,Software Mentor, Professor / Teacher, or Trainer,1,1,5,-3,-3,-3,5,-5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+538,Recently (0 to 2 years ago),20 to 30 years,Software Mentor; Professor / Teacher; Trainer,1,1,5,-3,-3,-3,5,-5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 539,Recently (0 to 2 years ago),10 to 20 years,Academic / Research Software Development,1,3,5,-1,-3,-1,1,-1,3,-1,1,1,-3,-1,-1,-1,1,1,1,3,5,-3,-1,-1,-3,
 540,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,3,3,1,-1,-1,-3,-1,-1,3,1,-1,3,-3,-3,-1,1,-1,3,1,-1,3,-1,-3,-1,-1,
 541,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,-3,1,3,-5,-5,3,1,-3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 542,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,1,1,5,-3,-3,1,-1,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-543,Recently (0 to 2 years ago),10 to 20 years,Software Mentor, Professor / Teacher, or Trainer,1,3,3,-3,-5,5,5,-5,1,-3,3,1,-3,5,1,-3,1,1,-3,3,1,-5,-3,-3,-3,
+543,Recently (0 to 2 years ago),10 to 20 years,Software Mentor; Professor / Teacher; Trainer,1,3,3,-3,-5,5,5,-5,1,-3,3,1,-3,5,1,-3,1,1,-3,3,1,-5,-3,-3,-3,
 544,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,3,5,1,-3,-5,-3,1,-1,3,3,5,5,-5,-5,-3,-1,1,3,-1,1,3,-5,-3,-3,-3,"The word \"length\" is already used for the same concept in \"variable length array\", so it is my preference for consistency alone."
 545,Recently (0 to 2 years ago),2 to 5 years,Just Reading / Just Learning,1,1,5,-3,-5,-3,-5,1,5,1,-1,3,-1,-3,-1,-1,-3,1,-1,-3,5,-1,-5,-3,-3,
 546,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-3,1,1,-1,1,-3,1,-3,-5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -552,7 +552,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 551,Recently (0 to 2 years ago),30+ years,Professional / Industrial Software Development,3,3,-1,-1,-1,-1,1,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 552,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,3,3,5,-3,-5,-3,5,-5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 553,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,1,3,1,1,-1,-3,-1,-1,3,0,0,5,-3,-3,-1,-1,-1,1,-1,-1,1,-1,-1,-1,-1,
-554,Recently (0 to 2 years ago),10 to 20 years,Software Mentor, Professor / Teacher, or Trainer,3,5,-1,-5,-3,1,1,-1,3,1,3,5,1,1,3,-1,-1,1,-1,-1,-1,-3,-3,-5,-3,
+554,Recently (0 to 2 years ago),10 to 20 years,Software Mentor; Professor / Teacher; Trainer,3,5,-1,-5,-3,1,1,-1,3,1,3,5,1,1,3,-1,-1,1,-1,-1,-1,-3,-3,-5,-3,
 555,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,-1,5,5,5,-1,-1,-1,-1,5,-1,-1,5,-1,-1,-1,-1,-1,-1,-1,-1,5,-1,-1,5,-1,
 556,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,1,5,3,-1,-1,-1,5,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 557,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,5,3,1,-5,-3,-5,0,0,0,1,5,1,-3,-3,-3,1,5,1,-3,-3,-3,-5,-5,-5,-5,
@@ -579,8 +579,8 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 578,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,3,1,-1,-1,1,-3,-1,1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 579,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,-3,5,3,-5,-5,-5,-3,-1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 580,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,5,1,3,0,-3,-3,3,-3,-3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-581,Recently (0 to 2 years ago),30+ years,Software Mentor, Professor / Teacher, or Trainer,-1,-1,5,-3,-5,-5,3,-1,-1,-1,-1,-1,-5,-5,-5,-3,-3,-3,1,5,1,-5,-5,-5,-5,
-582,Recently (0 to 2 years ago),20 to 30 years,Software Mentor, Professor / Teacher, or Trainer,-5,-5,-3,-5,-5,-5,-5,-5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"sizeof_array(x)"
+581,Recently (0 to 2 years ago),30+ years,Software Mentor; Professor / Teacher; Trainer,-1,-1,5,-3,-5,-5,3,-1,-1,-1,-1,-1,-5,-5,-5,-3,-3,-3,1,5,1,-5,-5,-5,-5,
+582,Recently (0 to 2 years ago),20 to 30 years,Software Mentor; Professor / Teacher; Trainer,-5,-5,-3,-5,-5,-5,-5,-5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"sizeof_array(x)"
 583,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,-1,5,3,-3,-3,-5,5,-3,3,-1,5,3,-3,-1,-1,-1,3,1,-1,1,-1,-3,-3,-5,-3,
 584,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,-1,5,3,0,-5,-5,-3,-5,5,0,0,5,-3,0,0,0,0,0,0,0,0,0,0,0,0,
 585,Recently (0 to 2 years ago),30+ years,Professional / Industrial Software Development,0,0,5,0,0,0,-5,-5,5,-5,-5,-5,-5,-5,-5,-5,-5,-5,0,-5,5,-5,-5,-5,-5,"Don't mess up C with garbage, countof is the way!!!"
@@ -607,7 +607,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 606,Recently (0 to 2 years ago),2 to 5 years,Academic / Research Software Development,3,5,3,-5,-5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 607,Recently (0 to 2 years ago),30+ years,Professional / Industrial Software Development,1,3,5,-1,1,0,3,-3,5,-3,3,3,-3,0,0,-3,-1,-1,-3,5,5,-5,-3,-3,-1,
 608,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-1,1,5,1,-1,-3,-1,-5,5,-5,-1,1,-5,-3,-3,-5,-3,-1,-5,1,5,-5,-3,-3,-3,
-609,Recently (0 to 2 years ago),5 to 10 years,Software Mentor, Professor / Teacher, or Trainer,-5,3,1,-5,-5,5,3,-5,5,-5,3,3,-5,3,5,-5,-5,-5,-5,1,1,-5,-5,-5,-5,
+609,Recently (0 to 2 years ago),5 to 10 years,Software Mentor; Professor / Teacher; Trainer,-5,3,1,-5,-5,5,3,-5,5,-5,3,3,-5,3,5,-5,-5,-5,-5,1,1,-5,-5,-5,-5,
 610,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,5,1,-1,-3,-5,-1,-1,1,5,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,"Thank you for your hard work! &lt;3"
 611,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,1,-1,1,-3,-3,-1,1,-1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"arrlen!  named after `strlen` because they're used very similarly."
 612,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,3,5,-3,-5,-5,-5,5,-5,3,-3,5,3,-5,-5,-5,-3,5,3,-5,-5,-5,-5,-5,-5,-5,"Fixing the conflict for most codebases will be a simple replace. I think it's more important to have a clean interface than to try and accomodate everybody. Like it or not, newbies care what the code \"looks\" like and will choose something else if they don't like the syntax."
@@ -625,7 +625,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 624,Recently (0 to 2 years ago),20 to 30 years,Academic / Research Software Development,3,-1,3,1,-1,1,3,3,-3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 625,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-5,-1,5,-5,-1,-3,-5,-3,5,-5,-5,-3,-5,-5,-3,-5,-5,-5,-5,-5,5,-5,-5,-5,-3,
 626,Recently (0 to 2 years ago),5 to 10 years,Hobbyist / Personal Projects,1,3,5,-3,-5,-1,3,1,5,1,3,3,-3,-1,-1,-1,1,1,3,5,5,-5,-3,-3,-5,
-627,Recently (0 to 2 years ago),10 to 20 years,Software Mentor, Professor / Teacher, or Trainer,-1,3,5,-3,1,-5,5,3,-1,1,3,-1,-3,-1,-3,-3,-1,-3,3,5,3,-1,1,-1,3,
+627,Recently (0 to 2 years ago),10 to 20 years,Software Mentor; Professor / Teacher; Trainer,-1,3,5,-3,1,-5,5,3,-1,1,3,-1,-3,-1,-3,-3,-1,-3,3,5,3,-1,1,-1,3,
 628,Recently (0 to 2 years ago),10 to 20 years,(Used to) Attend Standard Committee Meetings,-5,-5,5,5,5,-1,3,1,5,-5,-5,-5,-1,-1,-1,-5,-5,-5,5,5,5,5,5,5,5,
 629,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,-5,-3,5,3,1,-1,3,-5,5,-5,0,0,-5,0,0,-5,0,0,-5,3,5,-5,0,0,0,
 630,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,3,5,1,-5,-5,-1,-1,1,5,1,-1,5,-3,-3,-1,1,-1,3,-1,-1,1,-5,-5,-3,-3,
@@ -676,7 +676,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 675,Recently (0 to 2 years ago),10 to 20 years,Hobbyist / Personal Projects,3,5,1,-5,-5,-3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 676,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,-3,1,5,-3,-3,-5,5,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 677,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,1,1,5,-5,-5,-3,3,1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-678,Recently (0 to 2 years ago),10 to 20 years,Software Mentor, Professor / Teacher, or Trainer,1,1,3,5,3,-1,5,-3,-1,-3,1,-1,-3,-1,-1,-3,3,-3,-3,3,-3,-3,5,1,3,
+678,Recently (0 to 2 years ago),10 to 20 years,Software Mentor; Professor / Teacher; Trainer,1,1,3,5,3,-1,5,-3,-1,-3,1,-1,-3,-1,-1,-3,3,-3,-3,3,-3,-3,5,1,3,
 679,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,3,5,1,-3,-1,-5,3,-5,5,-5,3,5,-5,-3,-1,-5,-1,-1,-5,-3,-3,-5,-5,-5,-5,
 680,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,-3,-1,5,-3,1,-3,-3,-3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"„length“ is too ambiguous. „extent“ really does not convey its meaning at all. I'm personlly not a fan of abbreviations, and love lowercase with underscores."
 681,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-1,5,3,-5,-5,-5,3,-5,-1,-3,5,3,-5,-3,-1,-5,-3,-1,-5,-3,-1,-5,-5,-5,-5,
@@ -708,10 +708,10 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 707,2 to 5 years ago,2 to 5 years,Hobbyist / Personal Projects,-3,1,3,1,1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"It isn't clear why we can't just take nelemsof from BSD, so long as the feature has the same semantics as it has in BSD."
 708,Recently (0 to 2 years ago),10 to 20 years,Academic / Research Software Development,-1,-1,3,-3,-3,-5,-3,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 709,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,1,-1,5,-5,-5,-3,1,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-710,Recently (0 to 2 years ago),10 to 20 years,Software Mentor, Professor / Teacher, or Trainer,1,3,1,-1,-1,-5,1,-3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+710,Recently (0 to 2 years ago),10 to 20 years,Software Mentor; Professor / Teacher; Trainer,1,3,1,-1,-1,-5,1,-3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 711,Recently (0 to 2 years ago),5 to 10 years,Hobbyist / Personal Projects,-5,3,3,-3,-3,-1,3,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"whatever it ends up being, i'll personally just use a `#define signed_countof(X) ((ptrdiff_t)countof(X))`"
 712,Recently (0 to 2 years ago),5 to 10 years,Hobbyist / Personal Projects,1,1,5,-3,-1,-1,3,5,1,3,3,1,1,1,1,3,1,0,5,3,3,-3,-3,-1,1,"Length sounds ambiguous with number of chars to my ears. Count somehow sounds more clear."
-713,Recently (0 to 2 years ago),2 to 5 years,Software Mentor, Professor / Teacher, or Trainer,-3,1,3,-3,-5,3,3,-5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+713,Recently (0 to 2 years ago),2 to 5 years,Software Mentor; Professor / Teacher; Trainer,-3,1,3,-3,-5,3,3,-5,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 714,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,-1,1,5,-5,-5,-3,5,-1,5,1,1,1,-5,-5,0,-1,-1,0,3,5,5,-5,-5,-5,-5,
 715,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,5,3,-5,1,1,3,5,-5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 716,Recently (0 to 2 years ago),20 to 30 years,Hobbyist / Personal Projects,-5,-5,-5,-5,-5,-5,5,1,-1,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,"Please drop the \"of\". It's very silly. _Len or _Length would be great."
@@ -727,7 +727,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 726,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,-1,-1,5,3,1,-1,3,-3,5,-3,-3,-3,-3,-3,-3,-3,-3,-3,-1,3,5,-1,1,1,-1,
 727,Recently (0 to 2 years ago),30+ years,Professional / Industrial Software Development,-3,1,5,3,0,1,3,-3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 728,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-3,1,5,-1,-1,-1,5,3,0,1,1,1,-1,-1,-1,-1,-3,-3,3,5,1,-1,-1,-1,-1,
-729,10 to 20 years ago,5 to 10 years,Software Mentor, Professor / Teacher, or Trainer,-1,1,5,0,3,-3,-1,-1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+729,10 to 20 years ago,5 to 10 years,Software Mentor; Professor / Teacher; Trainer,-1,1,5,0,3,-3,-1,-1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 730,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,-5,-5,-1,-5,-5,-5,5,-5,-5,-5,-1,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,-5,
 731,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-1,3,1,1,5,5,1,-1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 732,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,1,1,3,-1,-1,-3,3,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -738,7 +738,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 737,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,1,-1,5,-5,-5,-3,3,-5,5,-5,-1,-1,-5,-3,-3,-5,-1,1,-5,3,5,-5,-3,-3,-3,
 738,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,1,3,1,0,-3,-5,-1,-1,3,0,0,0,0,0,0,0,0,5,0,0,5,0,0,0,0,
 739,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,3,5,3,-3,-3,-5,-3,-3,5,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,
-740,Recently (0 to 2 years ago),20 to 30 years,Software Mentor, Professor / Teacher, or Trainer,-3,3,5,-1,-1,-3,3,-3,5,1,3,5,-5,-3,-1,-5,-3,-1,3,5,5,-3,-1,1,1,"Thanks for working on this!"
+740,Recently (0 to 2 years ago),20 to 30 years,Software Mentor; Professor / Teacher; Trainer,-3,3,5,-1,-1,-3,3,-3,5,1,3,5,-5,-3,-1,-5,-3,-1,3,5,5,-3,-1,1,1,"Thanks for working on this!"
 741,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,-1,5,3,-3,-5,1,3,-1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 742,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-3,-3,1,1,1,-1,-1,-1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 743,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,1,3,5,1,-1,-5,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -753,11 +753,11 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 752,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,-1,-3,5,-5,-5,-3,-1,-5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 753,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,1,-1,-1,3,1,1,3,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 754,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-1,3,1,-3,-3,5,1,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-755,Recently (0 to 2 years ago),5 to 10 years,Software Mentor, Professor / Teacher, or Trainer,-1,-3,3,-1,-1,-3,3,-3,3,-3,-3,-3,-3,-3,-3,-1,-1,-1,-1,3,3,-1,-1,-1,-1,"I bet Committee will choose the most abysmal option anyway :D"
+755,Recently (0 to 2 years ago),5 to 10 years,Software Mentor; Professor / Teacher; Trainer,-1,-3,3,-1,-1,-3,3,-3,3,-3,-3,-3,-3,-3,-3,-1,-1,-1,-1,3,3,-1,-1,-1,-1,"I bet Committee will choose the most abysmal option anyway :D"
 756,Recently (0 to 2 years ago),10 to 20 years,Hobbyist / Personal Projects,-3,5,1,-5,-3,-3,1,5,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"sizeof and typeof, and _Alignof use complete dictionary words before 'of'. Consistency aids learning."
 757,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-3,5,3,-1,-1,-3,3,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 758,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,5,3,1,-1,-5,1,1,-3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-759,Recently (0 to 2 years ago),30+ years,Software Mentor, Professor / Teacher, or Trainer,1,3,3,-1,-1,-1,-1,5,-5,5,-1,-3,3,-1,-3,1,-1,-3,5,-1,-3,1,-1,-3,-3,"In general, I’m strongly against any alteration of the global, unprefixed namespace at this point; there are enough rules as it is. Chances are whatever it is will be `#if`'d in, b/c compilers won't support this for decades, so chances are the extra macro and header would be pointless machinery."
+759,Recently (0 to 2 years ago),30+ years,Software Mentor; Professor / Teacher; Trainer,1,3,3,-1,-1,-1,-1,5,-5,5,-1,-3,3,-1,-3,1,-1,-3,5,-1,-3,1,-1,-3,-3,"In general, I’m strongly against any alteration of the global, unprefixed namespace at this point; there are enough rules as it is. Chances are whatever it is will be `#if`'d in, b/c compilers won't support this for decades, so chances are the extra macro and header would be pointless machinery."
 760,Recently (0 to 2 years ago),10 to 20 years,Hobbyist / Personal Projects,-5,3,5,-5,-5,3,5,3,0,5,5,-1,5,5,-1,-5,-5,-5,5,5,-1,-5,-5,-5,-5,
 761,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,-1,-3,1,3,-1,-3,-5,-5,-5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 762,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,5,3,3,-1,-1,-5,-1,3,5,-1,-1,-1,-3,-3,-3,3,3,5,1,0,1,-3,-3,-1,-3,
@@ -777,7 +777,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 776,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,3,1,5,-5,-5,-5,3,-3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 777,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,5,3,3,-1,-3,1,1,-1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 778,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-1,5,3,-1,-3,-5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-779,Recently (0 to 2 years ago),2 to 5 years,Software Mentor, Professor / Teacher, or Trainer,3,5,1,-3,-5,-1,-5,-3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+779,Recently (0 to 2 years ago),2 to 5 years,Software Mentor; Professor / Teacher; Trainer,3,5,1,-3,-5,-1,-5,-3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 780,Recently (0 to 2 years ago),10 to 20 years,Hobbyist / Personal Projects,3,1,-3,5,1,-5,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 781,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,3,5,1,-1,1,-5,3,5,1,5,1,3,-1,-1,-1,-1,-1,-1,-1,-1,-3,-3,-3,0,-3,
 782,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,-1,3,3,-1,-3,-3,3,-3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -815,12 +815,12 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 814,Recently (0 to 2 years ago),30+ years,Professional / Industrial Software Development,1,-1,3,1,-3,-1,3,-3,1,-3,-1,-1,-3,-1,-1,-3,1,1,-3,3,3,-3,1,-1,-3,
 815,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-1,3,5,-3,-5,1,5,-3,3,-3,-1,-1,-3,-1,-3,-3,-1,-1,1,5,1,-5,-5,-5,-5,"This is a fantastic thing to add to C"
 816,10 to 20 years ago,5 to 10 years,Professional / Industrial Software Development,-5,0,5,3,1,-5,5,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-817,Recently (0 to 2 years ago),5 to 10 years,Software Mentor, Professor / Teacher, or Trainer,5,3,-1,-3,-3,-3,3,-3,-5,-3,1,-1,-3,-1,-3,-1,5,-1,-3,-3,-3,-5,-3,-5,-5,"When naming things, I came up with a rule I like: In face of ambiguity, choose the shortest. Then when typing code if I ask myself \"how did I called this last week?\" it's easy to find: the shortest."
+817,Recently (0 to 2 years ago),5 to 10 years,Software Mentor; Professor / Teacher; Trainer,5,3,-1,-3,-3,-3,3,-3,-5,-3,1,-1,-3,-1,-3,-1,5,-1,-3,-3,-3,-5,-3,-5,-5,"When naming things, I came up with a rule I like: In face of ambiguity, choose the shortest. Then when typing code if I ask myself \"how did I called this last week?\" it's easy to find: the shortest."
 818,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,1,3,1,-3,-3,1,3,-3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 819,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,1,-1,3,-3,-5,3,-3,-1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 820,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,-1,-1,5,3,-3,1,-1,1,5,-3,-1,-1,1,1,-1,-3,-3,-1,1,3,5,3,3,1,-1,
 821,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,-3,5,3,-5,-3,-1,1,-5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-822,2 to 5 years ago,10 to 20 years,Software Mentor, Professor / Teacher, or Trainer,1,1,5,3,3,-1,1,-5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+822,2 to 5 years ago,10 to 20 years,Software Mentor; Professor / Teacher; Trainer,1,1,5,3,3,-1,1,-5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 823,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-1,-1,3,3,1,-1,3,1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 824,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-3,5,5,-5,-1,5,-5,-3,5,-3,-5,5,-3,-5,3,-3,-5,-5,-3,-5,5,-3,-5,-3,-3,
 825,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,1,3,5,-1,-3,-5,-5,-3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -828,10 +828,10 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 827,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-1,3,5,-5,-3,-5,1,-1,3,-1,1,1,-5,-5,-5,-3,-3,-3,1,3,5,-5,-5,-5,-5,
 828,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,3,1,5,-3,-5,-1,-1,-3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 829,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,1,5,3,-5,-5,1,5,-5,1,-1,5,1,-3,-1,-1,-3,-1,-3,-3,3,0,-5,-5,-5,-5,
-830,Recently (0 to 2 years ago),20 to 30 years,Software Mentor, Professor / Teacher, or Trainer,3,5,3,-3,-1,-1,5,1,3,-1,5,5,-1,-1,-1,-1,3,3,-1,3,3,-3,-1,-1,1,"I like lengthof because it's visually analogous to sizeof; if I saw it in code without previously encountering it, I would know what it means. The other options (including lenof) are more distant from sizeof and thus intuitively feel more likely to be something in a third-party header. I don't think the trailing-NUL problem with lengthof vs. strlen is a real problem (it's maybe more of a problem with lenof, but slightly). If you're taking new options, \"arraylenof\" or \"arraysizeof\" or \"arraysize\" (lowercase, no underscore, seems manageable) would avoid that ambiguity. Also, i hope that it only works on arrays, and that applying it to something that's decayed to a pointer or to any other scalar is a compile error."
+830,Recently (0 to 2 years ago),20 to 30 years,Software Mentor; Professor / Teacher; Trainer,3,5,3,-3,-1,-1,5,1,3,-1,5,5,-1,-1,-1,-1,3,3,-1,3,3,-3,-1,-1,1,"I like lengthof because it's visually analogous to sizeof; if I saw it in code without previously encountering it, I would know what it means. The other options (including lenof) are more distant from sizeof and thus intuitively feel more likely to be something in a third-party header. I don't think the trailing-NUL problem with lengthof vs. strlen is a real problem (it's maybe more of a problem with lenof, but slightly). If you're taking new options, \"arraylenof\" or \"arraysizeof\" or \"arraysize\" (lowercase, no underscore, seems manageable) would avoid that ambiguity. Also, i hope that it only works on arrays, and that applying it to something that's decayed to a pointer or to any other scalar is a compile error."
 831,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-5,3,3,-5,-5,5,1,-1,5,0,0,5,0,0,5,0,0,0,0,0,0,0,0,0,0,
-832,Recently (0 to 2 years ago),5 to 10 years,Software Mentor, Professor / Teacher, or Trainer,-1,3,5,-1,-1,1,1,-3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-833,Recently (0 to 2 years ago),10 to 20 years,Software Mentor, Professor / Teacher, or Trainer,-5,-3,-5,-3,-5,-5,-1,5,-5,-1,-1,-5,-3,-5,-5,-3,-5,-5,-3,-5,-5,-3,-5,-5,-5,"I'd rather that you standardized existing practice unchanged; the BSD macros are fine. But if you must standardize an operator, at least let me pretend it doesn't exist. I won't use it, because there's only portability-related downside over the macro based version."
+832,Recently (0 to 2 years ago),5 to 10 years,Software Mentor; Professor / Teacher; Trainer,-1,3,5,-1,-1,1,1,-3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+833,Recently (0 to 2 years ago),10 to 20 years,Software Mentor; Professor / Teacher; Trainer,-5,-3,-5,-3,-5,-5,-1,5,-5,-1,-1,-5,-3,-5,-5,-3,-5,-5,-3,-5,-5,-3,-5,-5,-5,"I'd rather that you standardized existing practice unchanged; the BSD macros are fine. But if you must standardize an operator, at least let me pretend it doesn't exist. I won't use it, because there's only portability-related downside over the macro based version."
 834,Recently (0 to 2 years ago),30+ years,Professional / Industrial Software Development,-3,-1,5,-3,-3,1,-5,-5,5,-5,-5,-1,-5,-5,1,-5,-5,-3,-5,-5,5,-5,-5,-3,-3,
 835,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,-3,1,5,-3,-3,-3,5,-5,3,-3,1,1,-3,-3,-3,-3,-3,-3,-3,5,1,-5,-5,-5,-1,
 836,5 to 10 years ago,2 to 5 years,Professional / Industrial Software Development,-5,-3,5,-5,-3,-1,-5,-5,5,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,"Call it count() or countof(). It's not how large (size), or how long (length), or what dimensions (extent), it's how many. Cocoa nailed this."
@@ -840,7 +840,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 839,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,-3,-1,3,-3,-1,1,3,-1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 840,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,3,1,5,-5,-5,-5,3,-3,5,-1,3,3,-3,-3,-3,-1,3,3,-1,5,5,-5,-5,-5,-5,
 841,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-1,5,5,-1,1,5,5,-1,-5,-1,3,-5,-1,3,-5,-1,-1,-5,-1,3,-5,1,-1,-5,-5,
-842,Recently (0 to 2 years ago),5 to 10 years,Software Mentor, Professor / Teacher, or Trainer,-1,-1,5,-3,-3,3,-3,5,3,1,-3,1,1,-3,1,3,-3,3,3,-1,3,-1,-1,-1,-1,
+842,Recently (0 to 2 years ago),5 to 10 years,Software Mentor; Professor / Teacher; Trainer,-1,-1,5,-3,-3,3,-3,5,3,1,-3,1,1,-3,1,3,-3,3,3,-1,3,-1,-1,-1,-1,
 843,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,5,3,1,-1,-3,-5,5,-1,3,-1,1,1,-3,-1,-1,-3,3,5,-3,3,1,-3,-1,-1,-1,
 844,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,-5,-5,3,3,1,3,3,3,5,-5,-5,-5,0,0,0,0,0,0,0,0,0,0,0,0,0,
 845,Recently (0 to 2 years ago),10 to 20 years,Hobbyist / Personal Projects,3,1,5,-3,-5,3,5,1,-3,-3,1,-5,1,3,-3,-1,3,-3,3,5,1,-5,-5,-5,-5,
@@ -855,7 +855,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 854,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,-1,1,5,-3,-3,3,3,-1,5,-1,1,1,1,3,3,-1,-1,-3,1,5,3,-3,-3,-5,-5,
 855,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-1,1,5,-3,-5,1,1,-3,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 856,Recently (0 to 2 years ago),2 to 5 years,Academic / Research Software Development,3,3,1,-1,-3,-1,3,-1,5,-1,1,3,-1,-1,-1,1,3,5,-1,-1,1,-3,-3,-1,-3,
-857,Recently (0 to 2 years ago),2 to 5 years,Software Mentor, Professor / Teacher, or Trainer,-3,-1,-5,3,5,5,1,-5,5,-5,-1,1,-5,1,3,-5,-3,-3,-5,-3,-3,-1,1,3,5,"Thank you, JeanHeyd. Best Editor of the committee in its existence. 🫶🏼 stay safe, friend."
+857,Recently (0 to 2 years ago),2 to 5 years,Software Mentor; Professor / Teacher; Trainer,-3,-1,-5,3,5,5,1,-5,5,-5,-1,1,-5,1,3,-5,-3,-3,-5,-3,-3,-1,1,3,5,"Thank you, JeanHeyd. Best Editor of the committee in its existence. 🫶🏼 stay safe, friend."
 858,Recently (0 to 2 years ago),20 to 30 years,Academic / Research Software Development,1,3,5,-1,-1,3,1,-5,5,0,0,0,0,1,3,1,1,3,1,3,5,-5,-1,1,-1,"Thanks for all the work you do for C Standardization."
 859,Recently (0 to 2 years ago),30+ years,(Used to) Attend Standard Committee Meetings,-5,-5,5,3,3,3,5,1,-3,-5,-5,-5,1,1,1,-5,-5,-5,3,5,3,1,1,1,1,
 860,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-1,3,5,-5,-3,-1,3,-5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -864,7 +864,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 863,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,-5,5,-1,-5,-5,-5,1,3,5,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,
 864,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-1,5,1,-5,-3,-5,5,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 865,Recently (0 to 2 years ago),5 to 10 years,Academic / Research Software Development,-1,-1,5,-1,-3,-3,3,-3,5,0,0,0,0,0,0,0,0,0,0,3,5,0,0,0,0,
-866,Recently (0 to 2 years ago),20 to 30 years,Software Mentor, Professor / Teacher, or Trainer,5,3,1,1,-3,-5,-5,-5,-5,-1,-5,-5,-5,-5,-5,-1,-5,-5,-1,-3,-5,-3,-5,-5,-5,"why not just a macro in a header? strong dislike for a keyword. especially since the operator already conflicts with names I am aware of."
+866,Recently (0 to 2 years ago),20 to 30 years,Software Mentor; Professor / Teacher; Trainer,5,3,1,1,-3,-5,-5,-5,-5,-1,-5,-5,-5,-5,-5,-1,-5,-5,-1,-3,-5,-3,-5,-5,-5,"why not just a macro in a header? strong dislike for a keyword. especially since the operator already conflicts with names I am aware of."
 867,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,-5,-3,5,-5,-5,3,1,-5,5,-5,-3,-3,-5,3,5,-5,-5,-5,-5,3,5,-5,-5,-5,-5,"My like for \"extentof\" does come with the implication of \"rankof\", I like it far less if we won't see complementary \"rankof\". To me, \"countof\" is the better choice in absence of that."
 868,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-3,1,5,-3,-1,-3,-3,-5,5,-5,1,3,-5,-3,-1,-5,-3,-3,-5,1,5,-5,-3,-3,1,
 869,Recently (0 to 2 years ago),10 to 20 years,Hobbyist / Personal Projects,1,3,3,-5,-5,-1,-1,-5,3,-5,1,3,-5,-1,-1,-5,-3,-3,-5,1,1,-5,-5,-5,-5,
@@ -902,13 +902,13 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 901,Recently (0 to 2 years ago),2 to 5 years,Professional / Industrial Software Development,-1,3,3,-1,5,5,-3,3,5,1,-1,5,3,1,5,-1,-5,-1,3,1,3,-1,-5,1,5,"I used to work on the space sector (and will start working there again soon) where safety critical software is the majority of the software written. There MISRA is prevailant and you may also find formal verification tooling and methodologies, if your mission is important and expensive enough. What all that mean, is that ambiguities and features that undermine type safety are not welcome. An operator that returns the number of elements in an array is much needed, so thank you for this work. As for the name, when I was learning C some years ago, I noticed that many of my friends and colleagues in my class were really confused with the \"_Ugly keyword-normal macro in the header\" which usually led to mistakes and frustration. I'd be lying if I said that I wasn't confused too. So, my preference is to not have any header, either provide a normal keyword (best case scenario), or provide a an _Ugly keyword, but to be honest, I won't really mind if the header ends up being provided. As for the names, I like extent, since it reminds me of numerical software, which is the kind of software I write in my free time. Also, since nelementsof can be provided as a keyword as is, it's also a pretty strong candidate. Even though, length is a pretty common term, and probably the most aesthetically pleasing one, you never know what's going inside the mind of someone who is just learning C, and ambiguities with strlen may actually happen. Though, at the same time, VLA is an existing term and is even used in MISRA, so those concerns may be hyperbolic. In the end, I'll use it anyway."
 902,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,1,3,5,1,1,-1,3,-1,5,1,1,3,-3,-3,-3,-1,-1,1,1,1,5,-3,-3,-1,-1,"Thank you very much for your hard work! :)"
 903,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,1,-3,1,1,-3,-3,1,-1,-5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-904,Recently (0 to 2 years ago),10 to 20 years,Software Mentor, Professor / Teacher, or Trainer,5,3,3,3,-1,-1,3,-1,5,1,3,5,-5,-3,-3,1,3,5,-1,1,3,-5,-3,-3,-1,
+904,Recently (0 to 2 years ago),10 to 20 years,Software Mentor; Professor / Teacher; Trainer,5,3,3,3,-1,-1,3,-1,5,1,3,5,-5,-3,-3,1,3,5,-1,1,3,-5,-3,-3,-1,
 905,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,1,5,1,-1,-3,1,1,-5,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 906,Recently (0 to 2 years ago),10 to 20 years,Hobbyist / Personal Projects,3,5,1,-1,-3,5,5,-1,3,-1,5,3,-1,5,3,-3,1,-5,-1,1,1,-1,1,-1,-1,
 907,Recently (0 to 2 years ago),5 to 10 years,Hobbyist / Personal Projects,1,5,1,-5,-5,3,5,-3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"extentof coupled with a future potential rankof sounds like the wisest decision. failing that I prefer lengthof."
 908,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,1,3,1,-1,-3,1,-1,3,-3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 909,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,1,-1,5,3,-1,-1,1,5,-3,-1,-3,-5,-1,-3,-5,1,-3,-5,5,-1,-5,3,-1,-5,-5,"The most important is the usage pattern, \"no underscore and lowercase\" : strongly against as this is often the pattern used for variables, so this form will inevitably break some codes. I am also against macro usage : in case of an error in the usage of the operator, macro are always a pain to debug. So, an underscore with first capital letter is a good solution, this imply a standard function. Regarding the name, \"countof\" is preferred due to \"len\" often use for strings, this can lead to confusion null-terminated charaters"
-910,Recently (0 to 2 years ago),10 to 20 years,Software Mentor, Professor / Teacher, or Trainer,1,-1,-1,3,-3,-5,3,-5,5,-5,-3,-1,-5,-5,-5,-3,1,-5,-5,-3,-1,-3,3,5,-3,"I feel like _Nitems / nitems in a separate header would have been ideal pick. It wouldn't strictly clobber the BSD version, since the header would be optional, but would maintain a naming schema that's established, short, and transparent."
+910,Recently (0 to 2 years ago),10 to 20 years,Software Mentor; Professor / Teacher; Trainer,1,-1,-1,3,-3,-5,3,-5,5,-5,-3,-1,-5,-5,-5,-3,1,-5,-5,-3,-1,-3,3,5,-3,"I feel like _Nitems / nitems in a separate header would have been ideal pick. It wouldn't strictly clobber the BSD version, since the header would be optional, but would maintain a naming schema that's established, short, and transparent."
 911,Recently (0 to 2 years ago),30+ years,Professional / Industrial Software Development,1,1,5,-3,-1,-5,3,1,5,0,0,0,0,0,0,0,0,0,1,3,0,0,0,0,0,
 912,2 to 5 years ago,10 to 20 years,Academic / Research Software Development,-1,3,5,-5,-3,1,1,-1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 913,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,3,3,5,-1,1,-3,5,-3,-1,-1,3,1,-5,-3,-3,-1,3,1,1,5,3,-5,-3,-3,1,
@@ -924,15 +924,15 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 923,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,-3,3,-1,1,-1,1,3,-1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 924,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,-3,5,5,-5,-5,-1,-5,-1,5,-5,1,5,-5,-1,-1,-5,-5,-5,-5,-1,3,-5,-5,-5,-5,"who came up with nelementsof worst suggestion in the whole survey"
 925,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,1,5,3,-1,-1,1,3,1,5,0,0,5,0,0,0,0,0,3,0,0,0,0,0,0,0,
-926,Recently (0 to 2 years ago),10 to 20 years,Software Mentor, Professor / Teacher, or Trainer,1,5,3,-1,-1,-1,3,-1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+926,Recently (0 to 2 years ago),10 to 20 years,Software Mentor; Professor / Teacher; Trainer,1,5,3,-1,-1,-1,3,-1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 927,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-3,-1,5,-3,-1,-5,0,0,5,-3,-3,-1,-5,-5,-3,-5,-5,-3,3,3,5,-5,-5,-3,-1,
 928,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,3,3,1,1,-1,-1,3,-3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-929,Recently (0 to 2 years ago),5 to 10 years,Software Mentor, Professor / Teacher, or Trainer,-1,5,1,-5,-3,3,-5,1,3,5,3,5,3,-1,3,-3,-3,-3,3,1,3,-5,-5,-5,-3,
+929,Recently (0 to 2 years ago),5 to 10 years,Software Mentor; Professor / Teacher; Trainer,-1,5,1,-5,-3,3,-5,1,3,5,3,5,3,-1,3,-3,-3,-3,3,1,3,-5,-5,-5,-3,
 930,Recently (0 to 2 years ago),Recently (0 to 2 years),Professional / Industrial Software Development,5,3,-1,1,1,-5,-1,1,5,1,1,3,-5,-5,-3,3,1,5,-3,-5,-3,-3,-5,1,1,
 931,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,1,3,5,-1,-3,-3,5,-3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"looking forward to it, no matter the specific name or introduction pattern"
 932,5 to 10 years ago,2 to 5 years,Hobbyist / Personal Projects,3,-1,-1,3,-3,-3,3,-1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 933,Recently (0 to 2 years ago),2 to 5 years,Academic / Research Software Development,1,3,5,-5,-3,-1,5,1,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-934,Recently (0 to 2 years ago),5 to 10 years,Software Mentor, Professor / Teacher, or Trainer,1,3,3,-1,-3,-3,5,-1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+934,Recently (0 to 2 years ago),5 to 10 years,Software Mentor; Professor / Teacher; Trainer,1,3,3,-1,-3,-3,5,-1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 935,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-3,3,5,-1,-3,-3,5,-3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 936,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,5,3,1,-3,-1,-3,-5,-3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 937,Recently (0 to 2 years ago),Recently (0 to 2 years),Hobbyist / Personal Projects,1,1,3,-3,-3,-1,1,-1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -940,13 +940,13 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 939,Recently (0 to 2 years ago),5 to 10 years,Hobbyist / Personal Projects,-1,1,3,-5,5,-5,5,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 940,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-5,1,5,-5,-5,-1,1,-5,5,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,
 941,Recently (0 to 2 years ago),30+ years,Professional / Industrial Software Development,-1,-1,1,1,3,5,1,-1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-942,Recently (0 to 2 years ago),5 to 10 years,Software Mentor, Professor / Teacher, or Trainer,-1,-1,3,1,-3,-1,3,-3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"nitems() sounds good to me; couldn’t the committee work with the BSDs?"
+942,Recently (0 to 2 years ago),5 to 10 years,Software Mentor; Professor / Teacher; Trainer,-1,-1,3,1,-3,-1,3,-3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"nitems() sounds good to me; couldn’t the committee work with the BSDs?"
 943,5 to 10 years ago,2 to 5 years,Hobbyist / Personal Projects,1,1,1,-1,-1,-3,1,-1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-944,Recently (0 to 2 years ago),10 to 20 years,Software Mentor, Professor / Teacher, or Trainer,-5,1,5,-3,-3,1,1,1,5,-1,-3,-5,-1,-3,-5,-1,-3,-5,3,1,-1,-3,-5,-5,-5,
+944,Recently (0 to 2 years ago),10 to 20 years,Software Mentor; Professor / Teacher; Trainer,-5,1,5,-3,-3,1,1,1,5,-1,-3,-5,-1,-3,-5,-1,-3,-5,3,1,-1,-3,-5,-5,-5,
 945,Recently (0 to 2 years ago),10 to 20 years,Hobbyist / Personal Projects,1,3,5,-3,-3,-5,1,-3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 946,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,3,1,5,-1,-3,-5,1,-1,5,-1,1,1,-3,-1,-1,1,1,3,1,3,5,-1,-1,1,-1,
 947,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,-5,5,-1,-5,-3,-5,-5,-3,5,-5,-5,5,-5,-5,-5,-5,-5,-5,-5,-5,-1,-5,-5,-5,-3,
-948,Recently (0 to 2 years ago),2 to 5 years,Software Mentor, Professor / Teacher, or Trainer,-3,-3,1,-5,-5,3,3,-5,5,-5,-3,-3,-1,5,3,-5,-1,-3,-5,1,-1,-5,-5,-5,-5,"I feel like nof or noof should've been an option"
+948,Recently (0 to 2 years ago),2 to 5 years,Software Mentor; Professor / Teacher; Trainer,-3,-3,1,-5,-5,3,3,-5,5,-5,-3,-3,-1,5,3,-5,-1,-3,-5,1,-1,-5,-5,-5,-5,"I feel like nof or noof should've been an option"
 949,Recently (0 to 2 years ago),5 to 10 years,Academic / Research Software Development,-3,5,5,-3,-3,-3,-3,-3,5,-5,-5,5,-5,-5,-5,-5,-5,1,-5,-5,-5,-5,-5,-5,-5,"Keep up the great job, thank you!"
 950,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,-3,3,5,-5,-3,-3,3,-1,5,-3,1,3,-5,-3,-3,-5,-5,-5,-3,3,5,-5,-5,-5,-3,
 951,Recently (0 to 2 years ago),5 to 10 years,Academic / Research Software Development,1,5,-1,-3,-5,3,1,-1,1,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -974,7 +974,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 973,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,1,5,3,-5,-3,1,3,-1,-1,1,5,3,-1,1,1,-1,1,1,-1,1,1,-3,-5,-5,-3,
 974,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,-3,1,5,-3,-3,1,3,-1,1,0,0,0,0,0,0,-5,-5,0,1,5,1,0,0,0,0,
 975,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,1,1,5,-5,-5,3,3,-3,1,-3,1,-1,-3,3,-1,-3,3,-1,1,5,-1,-5,-5,-5,-5,"From a completely neutral point of view, I find countof the most intuitive followed by extendof. However, since the term len is already used similarily, e.g., in strlen, it is also a candidate. For compatibility reasons, I prefer the usage with _Keyword + macro for a transition similar to static_assert."
-976,Recently (0 to 2 years ago),10 to 20 years,Software Mentor, Professor / Teacher, or Trainer,1,1,5,-1,-1,-1,3,-3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"If an _Underscore keyword with a macro in the header is selected, I would imagine that it could transition to a lowercase-no-underscore keyword after a transition period (compare bool, alignof, etc.)"
+976,Recently (0 to 2 years ago),10 to 20 years,Software Mentor; Professor / Teacher; Trainer,1,1,5,-1,-1,-1,3,-3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"If an _Underscore keyword with a macro in the header is selected, I would imagine that it could transition to a lowercase-no-underscore keyword after a transition period (compare bool, alignof, etc.)"
 977,Recently (0 to 2 years ago),10 to 20 years,Hobbyist / Personal Projects,3,1,5,1,-1,-5,5,-3,3,1,1,1,-5,-5,-5,1,3,0,3,5,1,1,1,1,-1,"Sizes should be for byte sizes; for a number of elements, count feels to me like the best, with len(gth) being a very close second.  The extent one is creative, but way too obscure."
 978,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,1,1,-1,-1,1,-3,-1,-3,3,-1,1,3,-3,-1,1,-3,-1,1,-1,1,3,-3,-3,3,3,
 979,Recently (0 to 2 years ago),2 to 5 years,Hobbyist / Personal Projects,5,1,3,1,-1,-3,-1,-3,5,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -985,7 +985,7 @@ response_id,last_use,usage_experience,skill_level,"lenof | _Lenof","lengthof | _
 984,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-3,0,-1,-3,-3,3,1,-1,5,-1,0,0,1,3,5,-3,-3,-3,-1,-1,-1,-3,-3,-3,-3,
 985,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,-3,-3,1,-1,-1,5,5,-5,-1,-5,-3,-3,-1,5,1,-5,-3,-3,-3,1,-3,-5,-3,-3,-3,
 986,Recently (0 to 2 years ago),20 to 30 years,Professional / Industrial Software Development,1,1,3,-1,-3,-1,1,-5,3,-3,1,3,-3,-3,-3,-1,-1,-1,-3,1,3,-3,-3,-3,-3,
-987,Recently (0 to 2 years ago),2 to 5 years,Software Mentor, Professor / Teacher, or Trainer,5,3,-1,-3,-3,-3,5,-3,3,1,3,3,-3,-3,-3,-1,5,3,-1,1,1,-3,-3,-3,-3,
+987,Recently (0 to 2 years ago),2 to 5 years,Software Mentor; Professor / Teacher; Trainer,5,3,-1,-3,-3,-3,5,-3,3,1,3,3,-3,-3,-3,-1,5,3,-1,1,1,-3,-3,-3,-3,
 988,Recently (0 to 2 years ago),30+ years,Professional / Industrial Software Development,-5,-3,5,3,1,-1,3,1,-1,0,0,0,0,0,0,0,0,0,3,5,1,0,0,0,0,
 989,Recently (0 to 2 years ago),10 to 20 years,Professional / Industrial Software Development,-5,-5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"it's about size vs length, available space vs used space, lenght as in strlen is used space"
 990,Recently (0 to 2 years ago),5 to 10 years,Professional / Industrial Software Development,1,3,5,-1,-1,-3,-1,-3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

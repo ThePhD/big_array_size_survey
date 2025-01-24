@@ -239,7 +239,7 @@ def parse_question_answer(question_number, current_response: response,
 			# discard e-mail
 			pass
 		case 2:
-			current_response.skill_level = line
+			current_response.skill_level = "Software Mentor; Professor / Teacher; Trainer" if line == "Software Mentor, Professor / Teacher, or Trainer" else line
 		case 3:
 			current_response.last_use = "Recently (0 to 2 years ago)" if line == "Recently (0-2 years ago)" else line
 		case 4:
