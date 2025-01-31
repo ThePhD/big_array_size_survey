@@ -217,7 +217,7 @@ score_hatches = ["o", "x", "-", "|", "\\", "/", "*"]
 skill_hatches = ["o", "x", "-", "|", "\\", "/", "*"]
 
 def csv_string_escape (value: str):
-	value = value.replace("\"", r"\"")
+	value = value.replace('"', '""')
 	value = value.replace("\n", r"\n")
 	return value
 
