@@ -11,6 +11,7 @@ import matplotlib.pylab
 import matplotlib.pyplot
 import numpy
 import sys
+import math
 from mpl_toolkits.basemap import Basemap
 import wordcloud
 import colorsys
@@ -55,6 +56,15 @@ class response:
 		1: "Minor Like",
 		3: "Strong Like",
 		5: "Extreme Like (Most Loved)",
+	}
+	score_to_formatted_name_associations = {
+		-5: "Extreme Dislike\n(Most Hated)",
+		-3: "Strong\nDislike",
+		-1: "Minor\nDislike",
+		0: "No\nPreference",
+		1: "Minor\nLike",
+		3: "Strong\nLike",
+		5: "Extreme Like\n(Most Loved)",
 	}
 	score_to_index_associations = {
 		-5: 0,
@@ -203,6 +213,15 @@ class response:
 		self.exact_spelling = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 		self.comment: str | None = None
 
+class answer_stats:
+	def __init__(self, name: str):
+		self.name = name
+		self.mean = 0.0
+		self.mode = 0.0
+		self.median = 0.0 
+		self.standard_deviation = 0.0
+		self.standard_error = 0.0
+		self.samples: list[float] = []
 
 response_start_pattern = re.compile(
     r"==========================Response ((-)?\d+)==========================")
@@ -212,9 +231,8 @@ lati_pattern = re.compile(r"^\[Latitude\]\s*((-)?\d+(\.?(\d*)?))$")
 longi_pattern = re.compile(r"^\[(Longtitude|Longitude)\]\s*((-)?\d+(\.?(\d*)?))$")
 city_pattern = re.compile(r"^\[City\]\s*(.*)$")
 country_pattern = re.compile(r"^\[Country\]\s*(.*)$")
-score_colors = ["slategrey", "firebrick", "gold", "limegreen", "cornflowerblue", "blueviolet", "deeppink"]
-score_hatches = ["o", "x", "-", "|", "\\", "/", "*"]
-skill_hatches = ["o", "x", "-", "|", "\\", "/", "*"]
+score_colors = ["slategrey", "firebrick", "gold", "limegreen", "cornflowerblue", "blueviolet", "deeppink", "cornsilk", "cyan", "fuchsia", "peachpuff", "crimson", "yellow"]
+score_hatches = ["o", "x", "-", "|", "\\", "/", "*", None]
 
 def csv_string_escape (value: str):
 	value = value.replace("\"", r"\"")
@@ -299,14 +317,13 @@ def parse_question_answer(question_number, current_response: response,
 			pass
 	return line_index
 
-lati_count = 0
-longi_count = 0
-
 def parse_all_counted_data_into(lines):
 	results: list[response] = []
 	current_response = None
 	line_count = len(lines)
 	line_index = 0
+	lati_count = 0
+	longi_count = 0
 	while True:
 		if line_index >= line_count:
 			break
@@ -352,7 +369,6 @@ def parse_all_counted_data_into(lines):
 			lati_text = lati_match.group(1)
 			lati = float(lati_text)
 			current_response.latitude = lati
-			global lati_count
 			lati_count += 1
 			if lati_count != current_response.id:
 				print("something is wrong!!")
@@ -362,7 +378,6 @@ def parse_all_counted_data_into(lines):
 			longi_text = longi_match.group(2)
 			longi = float(longi_text)
 			current_response.longitude = longi
-			global longi_count
 			longi_count += 1
 			if longi_count != current_response.id:
 				print("something is wrong!!")
@@ -448,8 +463,8 @@ def draw_map(results: list[response], output_prefix, seed):
 	stroke_effects = [matplotlib.patheffects.withStroke(linewidth=1.25, foreground="white")]
 	
 	for result in results:
-		longiskew = -0.8 + ((rnd.randrange(0, 100) / 100.0) * 1.6)
-		latiskew = -0.8 + ((rnd.randrange(0, 100) / 100.0) * 1.6)
+		longiskew = -0.8 + (rnd.random() * 1.6)
+		latiskew = -0.8 + (rnd.random() * 1.6)
 		longi = result.longitude + longiskew
 		lati = result.latitude + latiskew
 		x, y = map(longi, lati)
@@ -469,12 +484,14 @@ def draw_map(results: list[response], output_prefix, seed):
 	title_text = matplotlib.pyplot.title("Respondent Geographic Distribution")
 	title_text.set_color("#000F")
 	title_text.set_path_effects(stroke_effects)
+	title_text.set_fontvariant("small-caps")
+	title_text.set_fontweight("bold")
 	
 	matplotlib.pyplot.tight_layout()
 	matplotlib.pyplot.savefig(output_prefix + "_map.png", dpi=600, transparent=True)
 	matplotlib.pyplot.close('all')
 
-def draw_skill_piecharts(results: list[response], output_prefix: str, seed: int):
+def draw_base_piechart(results: list[response], output_prefix: str, seed: int, piechart_title: str, piechart_file: str, figwidth: int | None, figheight: int | None):
 	label_counts: dict[str, int] = {}
 	for result in results:
 		if not label_counts.get(result.skill_level):
@@ -488,105 +505,44 @@ def draw_skill_piecharts(results: list[response], output_prefix: str, seed: int)
 	sizes = [label_counts[x] for x in label_counts]
 
 	figures, axes = matplotlib.pyplot.subplots()
-	figures.set_figwidth(28)
-	figures.set_figheight(20)
+	if figwidth:
+		figures.set_figwidth(figwidth)
+	if figheight:
+		figures.set_figheight(figheight)
 	stroke_effects = [matplotlib.patheffects.withStroke(linewidth=2, foreground="white")]
-	title_text = axes.set_title("Respondent Skill Levels")
-	_, texts = axes.pie(sizes, counterclock=False, labels=labels, hatch=skill_hatches)
+	title_text = axes.set_title(piechart_title)
+	_, texts = axes.pie(sizes, counterclock=False, labels=labels, hatch=score_hatches)
 
 	title_text.set_fontsize(48)
 	title_text.set_color("#000F")
 	title_text.set_path_effects(stroke_effects)
+	title_text.set_fontvariant("small-caps")
+	title_text.set_fontweight("bold")
 	for t in texts:
 		t.set_fontsize(20)
 		t.set_color("#000F")
 		t.set_path_effects(stroke_effects)
-	figures.savefig(output_prefix + "_skills.png", transparent=True)
+	figures.savefig(piechart_file, transparent=True)
 	matplotlib.pyplot.close('all')
+
+def draw_skill_piecharts(results: list[response], output_prefix: str, seed: int):
+	draw_base_piechart(results, output_prefix, seed, "Respondent Skill Level", output_prefix + "_skills.png", 28, 20)
 
 def draw_last_use_piecharts(results: list[response], output_prefix: str, seed: int):
-	label_counts: dict[str, int] = {}
-	for result in results:
-		if not label_counts.get(result.last_use):
-			label_counts[result.last_use] = 0
-		label_counts[result.last_use] += 1
-	
-	sorted_label_counts = sorted(list(label_counts.items()), key=lambda item: response.last_use_associations[item[0]])
-	label_counts: dict[str, int] = dict(sorted_label_counts)
-
-	labels = [x if x != "" else "(Unanswered)" for x in label_counts]
-	sizes = [label_counts[x] for x in label_counts]
-
-	figures, axes = matplotlib.pyplot.subplots()
-	figures.set_figwidth(21)
-	figures.set_figheight(20)
-	stroke_effects = [matplotlib.patheffects.withStroke(linewidth=2, foreground="white")]
-	title_text = axes.set_title("Respondent Last Time Using C")
-	_, texts = axes.pie(sizes, counterclock=False, labels=labels, hatch=score_hatches)
-
-	title_text.set_fontsize(48)
-	title_text.set_color("#000F")
-	title_text.set_path_effects(stroke_effects)
-	for t in texts:
-		t.set_fontsize(20)
-		t.set_color("#000F")
-		t.set_path_effects(stroke_effects)
-	figures.savefig(output_prefix + "_last_use.png", transparent=True)
-	matplotlib.pyplot.close('all')
+	draw_base_piechart(results, output_prefix, seed, "Respondent Last Time using C", output_prefix + "_last_use.png", 21, 20)
 
 def draw_experience_piecharts(results: list[response], output_prefix: str, seed: int):
-	label_counts: dict[str, int] = {}
-	for result in results:
-		if not label_counts.get(result.usage_experience):
-			label_counts[result.usage_experience] = 0
-		label_counts[result.usage_experience] += 1
-	
-	sorted_label_counts = sorted(list(label_counts.items()), key=lambda item: response.usage_experience_associations[item[0]])
-	label_counts: dict[str, int] = dict(sorted_label_counts)
+	draw_base_piechart(results, output_prefix, seed, "Respondent Cumulative Usage Experience", output_prefix + "_experience.png", 21, 20)
 
-	labels = [x if x != "" else "(Unanswered)" for x in label_counts]
-	sizes = [label_counts[x] for x in label_counts]
-
-	figures, axes = matplotlib.pyplot.subplots()
-	figures.set_figwidth(21)
-	figures.set_figheight(20)
-	stroke_effects = [matplotlib.patheffects.withStroke(linewidth=2, foreground="white")]
-	title_text = axes.set_title("Respondent Usage Experience")
-	_, texts = axes.pie(sizes, counterclock=False, labels=labels, hatch=score_hatches)
-
-	title_text.set_fontsize(48)
-	title_text.set_color("#000F")
-	title_text.set_path_effects(stroke_effects)
-	for t in texts:
-		t.set_fontsize(20)
-		t.set_color("#000F")
-		t.set_path_effects(stroke_effects)
-	figures.savefig(output_prefix + "_experience.png", transparent=True)
-	matplotlib.pyplot.close('all')
-
-def draw_spelling_barcharts(results: list[response], output_prefix: str, seed: int):
-	# format data
-	spelling = (
-		[0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0],
-	)
+def draw_base_raw_barcharts(results: list[response], raw_votes: tuple[list[int]], index_to_name_associations: list[str], chart_title: str, chart_file: str):
 	stroke_effects = [matplotlib.patheffects.withStroke(linewidth=2, foreground="gainsboro")]
-	for result in results:
-		for i, score in enumerate(spelling):
-			score = result.spelling[i]
-			index = response.score_to_index_associations[score]
-			spelling[i][index] += 1
 	figures_axes: tuple[matplotlib.figure.Figure, matplotlib.axes.Axes] = matplotlib.pyplot.subplots()
 	figures = figures_axes[0]
 	axes = figures_axes[1]
 	bars = []
-	for i, bar_list in enumerate(spelling):
+	for i, bar_list in enumerate(raw_votes):
 		bar_left_edge = -sum([x/2 if i == 3 else x for i, x in enumerate(bar_list[:4])])
-		category_label_name = response.index_to_spelling_associations[i]
+		category_label_name = index_to_name_associations[i]
 		for score_index, bar_score in enumerate(bar_list):
 			label_name = category_label_name + ", " + response.index_to_score_name_associations[score_index]
 			score_color = score_colors[score_index]
@@ -597,28 +553,96 @@ def draw_spelling_barcharts(results: list[response], output_prefix: str, seed: i
 			bar_left_edge += bar_score
 			bar.set_label(label_name)
 			bars.append(bar)
-	axes.set(ylabel="", ylim=(-1, 8.5), xlim=(-1000, 1000))
-	axes.set_xlabel("Raw Vote Count", path_effects=stroke_effects)
+	axes.set(ylabel="", ylim=(-1, len(raw_votes) * 1.5), xlim=(-1000, 1000))
+	axes.set_xlabel("\n\nRaw Vote Count", path_effects=stroke_effects, fontstyle="italic")
 	axes.set_xticks(numpy.arange(-1000, 1000, 250),
 			  [str(x) for x in numpy.arange(-1000, 1000, 250)],
 			  path_effects=stroke_effects)
-	axes.set_yticks([0, 1.5, 3, 4.5, 6, 7.5], response.index_to_spelling_associations,
-			  path_effects=stroke_effects)
+	axes.set_yticks([i * 1.5 for i, _ in enumerate(raw_votes)],
+				index_to_name_associations if "|" in index_to_name_associations[0]
+				else ["\n".join(s.split("; ") if ";" in s else s.split()) for s in index_to_name_associations],
+				path_effects=stroke_effects)
 	axes.grid(True)
 	axes.legend(bars[:len(response.index_to_score_name_associations)],
 		   response.index_to_score_name_associations,
 		   loc="upper left", bbox_to_anchor=(1, 0.5))
-	title_text = axes.set_title("Preferred Spelling")
+	title_text = axes.set_title(chart_title)
 	title_text.set_color("#000F")
 	title_text.set_path_effects(stroke_effects)
-	
-	figures.set_figwidth(figures.get_figwidth() * 2.8)
-	figures.savefig(output_prefix + "_spelling_preference.png", transparent=True)
+	title_text.set_fontvariant("small-caps")
+	title_text.set_fontweight("bold")
+
+	figures.set_size_inches(14, 8)
+	figures.tight_layout()
+	figures.savefig(chart_file, transparent=True)
 	matplotlib.pyplot.close('all')
 
-def draw_delivery_barcharts(results: list[response], output_prefix: str, seed: int):
-	# format data
+def draw_base_weighted_barcharts(results: list[response], answers: tuple[answer_stats], output_prefix: str, seed: int, title: str, filename: str):
 	stroke_effects = [matplotlib.patheffects.withStroke(linewidth=2, foreground="gainsboro")]
+	figures_axes: tuple[matplotlib.figure.Figure, matplotlib.axes.Axes] = matplotlib.pyplot.subplots()
+	figures = figures_axes[0]
+	axes = figures_axes[1]
+	bars = []
+	scatters = []
+	rnd = random.Random(seed)
+	for i, answer in enumerate(answers):
+		category_label_name = answer.name
+		label_name = category_label_name
+		bar_color = score_colors[i % len(score_colors)]
+		bar_marker = score_hatches[i % len(score_hatches)]
+		y_location = i + (0.5 * i)
+		bar = axes.barh(y_location, answer.mean, height=1,
+			color=bar_color, hatch=bar_marker, edgecolor="navy",
+			xerr=answer.standard_error, capsize=5.0)
+		bar.set_label(label_name)
+		bars.append(bar)
+		scatter_samples_x = [x + (-0.4 + rnd.random() * 0.8) for x in answer.samples]
+		scatter_samples_y = [y_location + (-0.2 + rnd.random() * 0.4) for _ in answer.samples]
+		scatter = axes.scatter(scatter_samples_x, scatter_samples_y, alpha=0.005,
+			color=bar_color, hatch=bar_marker, edgecolor=None)
+		scatters.append(scatter)
+
+	axes.set(ylabel="", ylim=(-1, 1.5 * len(answers)), xlim=(-6, 6))
+	axes.set_xlabel("\n\nWeighted Preference Score", path_effects=stroke_effects, fontstyle="italic")
+	axes.set_xticks(numpy.arange(-6, 6, 1),
+			  [(str(x) + "\n" + response.score_to_formatted_name_associations[x]
+			  	if x in response.score_to_formatted_name_associations
+			  	else str(x))
+			  for x in numpy.arange(-6, 6, 1)],
+			  path_effects=stroke_effects)
+	axes.set_yticks([i * 1.5 for i, _ in enumerate(answers)], [x.name for _, x in enumerate(answers)],
+			  path_effects=stroke_effects)
+	axes.grid(True)
+	title_text = axes.set_title(title)
+	title_text.set_color("#000F")
+	title_text.set_path_effects(stroke_effects)
+	title_text.set_fontvariant("small-caps")
+	title_text.set_fontweight("bold")
+	
+	figures.set_size_inches(12, 6)
+	figures.tight_layout()
+	figures.savefig(filename, transparent=True)
+	matplotlib.pyplot.close('all')
+
+def draw_spelling_barcharts(results: list[response], output_prefix: str, seed: int):
+	spelling = (
+		[0, 0, 0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0, 0, 0],
+	)
+
+	for result in results:
+		for i, _ in enumerate(spelling):
+			score = result.spelling[i]
+			index = response.score_to_index_associations[score]
+			spelling[i][index] += 1
+
+	draw_base_raw_barcharts(results, spelling, response.index_to_spelling_associations, "Preferred Spelling", output_prefix + "_spelling_preference.png")
+
+def draw_delivery_barcharts(results: list[response], output_prefix: str, seed: int):
 	delivery = (
 		[0, 0, 0, 0, 0, 0, 0],
 		[0, 0, 0, 0, 0, 0, 0],
@@ -629,46 +653,9 @@ def draw_delivery_barcharts(results: list[response], output_prefix: str, seed: i
 			score = result.delivery[i]
 			index = response.score_to_index_associations[score]
 			delivery[i][index] += 1
-	figures_axes: tuple[matplotlib.figure.Figure, matplotlib.axes.Axes] = matplotlib.pyplot.subplots()
-	figures = figures_axes[0]
-	axes = figures_axes[1]
-	bars = []
-	for i, bar_list in enumerate(delivery):
-		bar_left_edge = -sum([x/2 if i == 3 else x for i, x in enumerate(bar_list[:4])])
-		category_label_name = response.index_to_delivery_associations[i]
-		for score_index, bar_score in enumerate(bar_list):
-			label_name = category_label_name + ", " + response.index_to_score_name_associations[score_index]
-			score_color = score_colors[score_index]
-			score_marker = score_hatches[score_index]
-			bar = axes.barh(i + (0.5 * i), bar_score, height=1,
-			    left=bar_left_edge, color=score_color,
-			    hatch=score_marker, edgecolor="navy")
-			bar_left_edge += bar_score
-			bar.set_label(label_name)
-			bars.append(bar)
-	axes.set(ylabel="", ylim=(-1, 4), xlim=(-1000, 1000))
-	axes.set_xlabel("Raw Vote Count", path_effects=stroke_effects)
-	axes.set_xticks(numpy.arange(-1000, 1000, 250),
-			  [str(x) for x in numpy.arange(-1000, 1000, 250)],
-			  path_effects=stroke_effects)
-	axes.set_yticks([0, 1.5, 3],
-			  ["\n".join(s.split()) for s in response.index_to_delivery_associations],
-			  path_effects=stroke_effects)
-	axes.grid(True)
-	axes.legend(bars[:len(response.index_to_score_name_associations)],
-		   response.index_to_score_name_associations,
-		   loc="upper left", bbox_to_anchor=(1, 0.5))
-	title_text = axes.set_title("Preferred Delivery Mechanism")
-	title_text.set_color("#000F")
-	title_text.set_path_effects(stroke_effects)
-	figures.set_figwidth(figures.get_figwidth() * 2.8)
-	figures.savefig(output_prefix + "_delivery_preference.png", transparent=True)
-	matplotlib.pyplot.close('all')
-
+	draw_base_raw_barcharts(results, delivery, response.index_to_delivery_associations, "Preferred Delivery Mechanism", output_prefix + "_delivery_preference.png")
 
 def draw_exact_spelling_barcharts(results: list[response], output_prefix: str, seed: int):
-	# format data
-	stroke_effects = [matplotlib.patheffects.withStroke(linewidth=2, foreground="gainsboro")]
 	exact_spelling = (
 		[0, 0, 0, 0, 0, 0, 0],
 		[0, 0, 0, 0, 0, 0, 0],
@@ -692,42 +679,92 @@ def draw_exact_spelling_barcharts(results: list[response], output_prefix: str, s
 			score = result.exact_spelling[i]
 			index = response.score_to_index_associations[score]
 			exact_spelling[i][index] += 1
-	figures_axes: tuple[matplotlib.figure.Figure, matplotlib.axes.Axes] = matplotlib.pyplot.subplots()
-	figures = figures_axes[0]
-	axes = figures_axes[1]
-	bars = []
-	for i, bar_list in enumerate(exact_spelling):
-		bar_left_edge = -sum([x/2 if i == 3 else x for i, x in enumerate(bar_list[:4])])
-		category_label_name = response.index_to_exact_spelling_associations[i]
-		for score_index, bar_score in enumerate(bar_list):
-			label_name = category_label_name + ", " + response.index_to_score_name_associations[score_index]
-			score_color = score_colors[score_index]
-			score_marker = score_hatches[score_index]
-			bar = axes.barh(i + (0.5 * i), bar_score, height=1,
-			    left=bar_left_edge, color=score_color,
-			    hatch=score_marker, edgecolor="navy")
-			bar_left_edge += bar_score
-			bar.set_label(label_name)
-			bars.append(bar)
-	axes.set(ylabel="", ylim=(-1, 23.5), xlim=(-1000, 1000))
-	axes.set_xlabel("Raw Vote Count", path_effects=stroke_effects)
-	axes.set_xticks(numpy.arange(-1000, 1000, 250),
-			  [str(x) for x in numpy.arange(-1000, 1000, 250)],
-			  path_effects=stroke_effects)
-	axes.set_yticks([0, 1.5, 3, 4.5, 6, 7.5, 9, 10.5, 12, 13.5, 15, 16.5, 18, 19.5, 21, 22.5],
-			  [";\n".join(s.split("; ")) for s in response.index_to_exact_spelling_associations],
-			  path_effects=stroke_effects)
-	axes.grid(True)
-	axes.legend(bars[:len(response.index_to_score_name_associations)],
-		   response.index_to_score_name_associations,
-		   loc="upper left", bbox_to_anchor=(1, 0.5))
-	title_text = axes.set_title("Preferred Exact Spelling")
-	title_text.set_color("#000F")
-	title_text.set_path_effects(stroke_effects)
-	figures.set_figwidth(figures.get_figwidth() * 2.8)
-	figures.set_figheight(figures.get_figheight() * 1.8)
-	figures.savefig(output_prefix + "_exact_spelling_preference.png", transparent=True)
-	matplotlib.pyplot.close('all')
+	draw_base_raw_barcharts(results, exact_spelling, response.index_to_exact_spelling_associations, "Preferred Exact Spelling", output_prefix + "_exact_spelling_preference.png")
+
+def draw_weighted_spelling_barcharts(results: list[response], output_prefix: str, seed: int):
+	# format data
+	spelling = (
+		answer_stats(response.index_to_spelling_associations[0]),
+		answer_stats(response.index_to_spelling_associations[1]),
+		answer_stats(response.index_to_spelling_associations[2]),
+		answer_stats(response.index_to_spelling_associations[3]),
+		answer_stats(response.index_to_spelling_associations[4]),
+		answer_stats(response.index_to_spelling_associations[5])
+	)
+	for result in results:
+		for i, score in enumerate(spelling):
+			score = result.spelling[i]
+			spelling[i].samples.append(score)
+
+	for i, answer in enumerate(spelling):
+		samples = answer.samples
+		answer.mean = numpy.mean(samples)
+		unique_samples, unique_sample_counts = numpy.unique(samples, return_counts=True)
+		answer.mode = unique_samples[numpy.argmax(unique_sample_counts)]
+		answer.median = numpy.median(samples)
+		answer.standard_deviation = numpy.std(samples)
+		answer.standard_error = 0 if len(answer.samples) < 2 else answer.standard_deviation / math.sqrt(len(answer.samples))
+
+	draw_base_weighted_barcharts(results, spelling, output_prefix, seed, "Weighted Preferred Spelling", output_prefix + "_weighted_spelling_preference.png")
+
+
+def draw_weighted_delivery_barcharts(results: list[response], output_prefix: str, seed: int):
+	delivery = (
+		answer_stats(response.index_to_delivery_associations[0]),
+		answer_stats(response.index_to_delivery_associations[1]),
+		answer_stats(response.index_to_delivery_associations[2]),
+	)
+	for result in results:
+		for i, score in enumerate(delivery):
+			score = result.delivery[i]
+			delivery[i].samples.append(score)
+
+	for i, answer in enumerate(delivery):
+		samples = answer.samples
+		answer.mean = numpy.mean(samples)
+		unique_samples, unique_sample_counts = numpy.unique(samples, return_counts=True)
+		answer.mode = unique_samples[numpy.argmax(unique_sample_counts)]
+		answer.median = numpy.median(samples)
+		answer.standard_deviation = numpy.std(samples)
+		answer.standard_error = 0 if len(answer.samples) < 2 else answer.standard_deviation / math.sqrt(len(answer.samples))
+
+	draw_base_weighted_barcharts(results, delivery, output_prefix, seed, "Weighted Delivery Preference", output_prefix + "_weighted_delivery_preference.png")
+
+
+def draw_weighted_exact_spelling_barcharts(results: list[response], output_prefix: str, seed: int):
+	exact_spelling = (
+		answer_stats(response.index_to_exact_spelling_associations[0]),
+		answer_stats(response.index_to_exact_spelling_associations[1]),
+		answer_stats(response.index_to_exact_spelling_associations[2]),
+		answer_stats(response.index_to_exact_spelling_associations[3]),
+		answer_stats(response.index_to_exact_spelling_associations[4]),
+		answer_stats(response.index_to_exact_spelling_associations[5]),
+		answer_stats(response.index_to_exact_spelling_associations[6]),
+		answer_stats(response.index_to_exact_spelling_associations[7]),
+		answer_stats(response.index_to_exact_spelling_associations[8]),
+		answer_stats(response.index_to_exact_spelling_associations[9]),
+		answer_stats(response.index_to_exact_spelling_associations[10]),
+		answer_stats(response.index_to_exact_spelling_associations[11]),
+		answer_stats(response.index_to_exact_spelling_associations[12]),
+		answer_stats(response.index_to_exact_spelling_associations[13]),
+		answer_stats(response.index_to_exact_spelling_associations[14]),
+		answer_stats(response.index_to_exact_spelling_associations[15]),
+	)
+	for result in results:
+		for i, score in enumerate(exact_spelling):
+			score = result.exact_spelling[i]
+			exact_spelling[i].samples.append(score)
+
+	for i, answer in enumerate(exact_spelling):
+		samples = answer.samples
+		answer.mean = numpy.mean(samples)
+		unique_samples, unique_sample_counts = numpy.unique(samples, return_counts=True)
+		answer.mode = unique_samples[numpy.argmax(unique_sample_counts)]
+		answer.median = numpy.median(samples)
+		answer.standard_deviation = numpy.std(samples)
+		answer.standard_error = 0 if len(answer.samples) < 2 else answer.standard_deviation / math.sqrt(len(answer.samples))
+
+	draw_base_weighted_barcharts(results, exact_spelling, output_prefix, seed, "Weighted Preferred Exact Spelling", output_prefix + "_weighted_exact_spelling_preference.png")
 
 
 def draw_graphs(results: list[response], output_prefix: str, seed: int):
@@ -737,6 +774,9 @@ def draw_graphs(results: list[response], output_prefix: str, seed: int):
 	draw_spelling_barcharts(results, output_prefix, seed)
 	draw_delivery_barcharts(results, output_prefix, seed)
 	draw_exact_spelling_barcharts(results, output_prefix, seed)
+	draw_weighted_spelling_barcharts(results, output_prefix, seed)
+	draw_weighted_delivery_barcharts(results, output_prefix, seed)
+	draw_weighted_exact_spelling_barcharts(results, output_prefix, seed)
 
 def main():
 	arg_parser = argparse.ArgumentParser(
