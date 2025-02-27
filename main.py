@@ -2,6 +2,7 @@
 # To view a copy of this license, visit https://creativecommons.org/publicdomain/zero/1.0/
 
 import argparse
+import csv
 import re
 import random
 import matplotlib
@@ -11,6 +12,7 @@ import matplotlib.pylab
 import matplotlib.pyplot
 import numpy
 import sys
+import os
 import math
 from mpl_toolkits.basemap import Basemap
 import wordcloud
@@ -237,6 +239,15 @@ score_hatches = ["o", "x", "-", "|", "\\", "/", "*", None]
 def csv_string_escape (value: str):
 	value = value.replace('"', '""')
 	value = value.replace("\n", r"\n")
+	# not present in all CSVs but still recommended nonetheless, and less harmful than any other kind of escaping
+	value = value.replace("<", r"&lt;")
+	value = value.replace(">", r"&gt;")
+	value = f"\"{value}\""
+	return value
+
+def make_csv_value (value: str):
+	if any(x in value for x in "\"\n<>,"):
+		return csv_string_escape(value)
 	return value
 
 def parse_question_answer(question_number, current_response: response,
@@ -317,7 +328,7 @@ def parse_question_answer(question_number, current_response: response,
 			pass
 	return line_index
 
-def parse_all_counted_data_into(lines):
+def parse_all_counted_data(lines):
 	results: list[response] = []
 	current_response = None
 	line_count = len(lines)
@@ -385,25 +396,63 @@ def parse_all_counted_data_into(lines):
 		line_index += 1
 	return results
 
+def parse_csv_data(f):
+	reader = csv.reader(f)
+	results: list[response] = []
+	row_index = 0
+	for row in reader:
+		if row_index == 0:
+			row_index += 1
+			continue
+		result = response()
+		column_index = 0
+		result.id = int(row[column_index])
+		column_index += 1
+		result.last_use = row[column_index]
+		column_index += 1
+		result.usage_experience = row[column_index]
+		column_index += 1
+		result.skill_level = row[column_index]
+		column_index += 1
+		for spelling_index, _ in enumerate(result.spelling):
+			spelling = int(row[column_index + spelling_index])
+			result.spelling[spelling_index] = spelling
+		column_index += len(result.spelling)
+		for delivery_index, _ in enumerate(result.delivery):
+			delivery = int(row[column_index + delivery_index])
+			result.delivery[delivery_index] = delivery
+		column_index += len(result.delivery)
+		for exact_spelling_index, _ in enumerate(result.exact_spelling):
+			exact_spelling = int(row[column_index + exact_spelling_index])
+			result.exact_spelling[exact_spelling_index] = exact_spelling
+		column_index += len(result.exact_spelling)
+		result.comment = row[column_index]
+		column_index += 1
+		assert(column_index == 30)
+		results.append(result)
+		row_index += 1
+	assert(row_index == 0 or row_index - 1 == len(results))
+	return results
+
 
 def write_csv_data(results : list[response], output_prefix, seed):
 	with open(output_prefix + "_data.csv", "w", encoding="utf-8") as f:
 		# descriptive headers
 		header_line = "response_id,last_use,usage_experience,skill_level,"
 		for label in response.index_to_spelling_associations:
-			header_label = csv_string_escape(label)
-			header_line += f"\"{header_label}\","
+			header_label = make_csv_value(label)
+			header_line += f"{header_label},"
 		for label in response.index_to_delivery_associations:
-			header_label = csv_string_escape(label)
-			header_line += f"\"{header_label}\","
+			header_label = make_csv_value(label)
+			header_line += f"{header_label},"
 		for label in response.index_to_exact_spelling_associations:
-			header_label = csv_string_escape(label)
-			header_line += f"\"{header_label}\","
+			header_label = make_csv_value(label)
+			header_line += f"{header_label},"
 		header_line += "comment\n"
 		f.write(header_line)
 		# rest of the data
 		for result in results:
-			line = f"{result.id},{result.last_use},{result.usage_experience},{result.skill_level}"
+			line = f"{result.id},{make_csv_value(result.last_use)},{make_csv_value(result.usage_experience)},{make_csv_value(result.skill_level)}"
 			for s in result.spelling:
 				line += f",{s}"
 			for d in result.delivery:
@@ -412,8 +461,8 @@ def write_csv_data(results : list[response], output_prefix, seed):
 				line += f",{es}"
 			line += ","
 			if not result.comment is None and len(result.comment) > 0:
-				comment = csv_string_escape(result.comment)
-				line += f"\"{comment}\""
+				comment = make_csv_value(result.comment)
+				line += f"{comment}"
 			line += "\n"
 
 			f.write(line)
@@ -787,9 +836,13 @@ def main():
 		epilog=
 		"To learn more, see: https://thephd.dev/the-big-array-size-survey-for-c"
 	)
-	arg_parser.add_argument(help="AllCounted. text-formatted files...",
+	arg_parser.add_argument(help="Appropriately formatted input files...",
 						dest="inputs",
 						nargs="*")
+	arg_parser.add_argument("-c", "--csv",
+					help="Ignore extension and parse inputs as CSV files",
+					dest="csv",
+					action=argparse.BooleanOptionalAction)
 	arg_parser.add_argument("-o", "--output",
 					help="Output file prefix...",
 					dest="output_prefix",
@@ -801,15 +854,25 @@ def main():
 	args = arg_parser.parse_args()
 
 	survey_results = []
+	allcounted_parsing = 0
+	csv_parsing = 0
 	for input in args.inputs:
-		input_data = None
-		with open(input, 'r', encoding="utf8") as f:
-			input_data = f.readlines()
-		survey_results.extend(parse_all_counted_data_into(input_data))
+		if (args.csv is not None and args.csv) or (os.path.splitext(input)[1] == ".csv"):
+			with open(input, 'r', newline='', encoding="utf8") as f:
+				survey_results.extend(parse_csv_data(f))
+				csv_parsing += 1
+		else:
+			input_data = None
+			with open(input, 'r', encoding="utf8") as f:
+				input_data = f.readlines()
+			survey_results.extend(parse_all_counted_data(input_data))
+			allcounted_parsing += 1
+			
 
-	write_csv_data(survey_results, args.output_prefix, args.seed)
-	draw_map(survey_results, args.output_prefix, args.seed)
-	draw_city_distribution(survey_results, args.output_prefix, args.seed)
+	if allcounted_parsing > 0:
+		write_csv_data(survey_results, args.output_prefix, args.seed)
+		draw_map(survey_results, args.output_prefix, args.seed)
+		draw_city_distribution(survey_results, args.output_prefix, args.seed)
 	draw_graphs(survey_results, args.output_prefix, args.seed)
 
 if __name__ == "__main__":
