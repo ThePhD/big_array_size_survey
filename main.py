@@ -540,12 +540,13 @@ def draw_map(results: list[response], output_prefix, seed):
 	matplotlib.pyplot.savefig(output_prefix + "_map.png", dpi=600, transparent=True)
 	matplotlib.pyplot.close('all')
 
-def draw_base_piechart(results: list[response], output_prefix: str, seed: int, piechart_title: str, piechart_file: str, figwidth: int | None, figheight: int | None):
+def draw_base_piechart(results: list[response], result_attr_string: str, output_prefix: str, seed: int, piechart_title: str, piechart_file: str, figwidth: int | None, figheight: int | None):
 	label_counts: dict[str, int] = {}
 	for result in results:
-		if not label_counts.get(result.skill_level):
-			label_counts[result.skill_level] = 0
-		label_counts[result.skill_level] += 1
+		result_attr = getattr(result, result_attr_string)
+		if not label_counts.get(result_attr):
+			label_counts[result_attr] = 0
+		label_counts[result_attr] += 1
 
 	sorted_label_counts = sorted(list(label_counts.items()), key=lambda item: item[1])
 	label_counts: dict[str, int] = dict(sorted_label_counts)
@@ -575,13 +576,13 @@ def draw_base_piechart(results: list[response], output_prefix: str, seed: int, p
 	matplotlib.pyplot.close('all')
 
 def draw_skill_piecharts(results: list[response], output_prefix: str, seed: int):
-	draw_base_piechart(results, output_prefix, seed, "Respondent Skill Level", output_prefix + "_skills.png", 28, 20)
+	draw_base_piechart(results, 'skill_level', output_prefix, seed, "Respondent Skill Level", output_prefix + "_skills.png", 28, 20)
 
 def draw_last_use_piecharts(results: list[response], output_prefix: str, seed: int):
-	draw_base_piechart(results, output_prefix, seed, "Respondent Last Time using C", output_prefix + "_last_use.png", 21, 20)
+	draw_base_piechart(results, 'last_use', output_prefix, seed, "Respondent Last Time using C", output_prefix + "_last_use.png", 21, 20)
 
 def draw_experience_piecharts(results: list[response], output_prefix: str, seed: int):
-	draw_base_piechart(results, output_prefix, seed, "Respondent Cumulative Usage Experience", output_prefix + "_experience.png", 21, 20)
+	draw_base_piechart(results, 'usage_experience', output_prefix, seed, "Respondent Cumulative Usage Experience", output_prefix + "_experience.png", 21, 20)
 
 def draw_base_raw_barcharts(results: list[response], raw_votes: tuple[list[int]], index_to_name_associations: list[str], chart_title: str, chart_file: str):
 	stroke_effects = [matplotlib.patheffects.withStroke(linewidth=2, foreground="gainsboro")]
